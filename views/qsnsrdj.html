@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  ng-app="qsnsrdj">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/esl.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <!--<script src="js/angular-ui-router.min.js"></script>-->
+    <script src="../js/qsnsrdj.js"></script>
+</head>
+<body ng-controller="ListCtrl">
+    <div class="leftview">
+         <div id="mainnsdjqk"></div>
+         <span>越大表示值越大</span>
+    </div>
+    <div class="rightview">
+        <p>纳税人登记注册户数</p>
+        <h4>{{zcyhs}}</h4>
+        <hr/>
+        <ul >
+          <li ng-repeat="item in citydata">{{item.name}},<span style="color: yellow">{{item.num}}</span>户，<span style="color: yellow">{{item. percent}}</span>%</li>
+        </ul>
+    </div>
+</body>
+</html>

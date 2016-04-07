@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/esl.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/angular.min.js"></script>
+    <!--<script src="js/angular-ui-router.min.js"></script>-->
+    <script src="js/main.js"></script>
+</head>
+<body ng-app="zjdx">
+    <div id="header">
+        <img src="imges/1.jpg" alt=""/>
+        <div class="right"><ul><li>更多功能</li><li>全屏展示</li></ul></div>
+    </div>
+    <div id="section" ng-controller="swdxCtrl">
+        <div id="leftdiv">
+            <ul>
+                <li><img src="imges/2.jpg"/><span>税务登记户数:<span>&nbsp;<span class="int">+{{int1}}</span></span><br/><span>{{djhs}}</span>户</span></li>
+                <li><img src="imges/3.jpg"/><span>地税部门组织收入：<span>&nbsp;<span class="int">+{{int2}}</span></span><br/><span>{{bmsr}}</span>万元</span></li>
+                <li><img src="imges/4.jpg"/><span>税收：<span>&nbsp;<span class="int">+{{int3}}</span></span><br/><span>{{shuishou}}</span>万元</span></li>
+                <li><img src="imges/5.jpg"/><span>非税收入：<span>&nbsp;<span class="int">+{{int4}}</span></span><br/><span>{{feiss}}</span>万元</span></li>
+            </ul>
+            <div  id="linecavs"></div>
+        </div>
+        <div id="centerdiv">
+            <div id="mapcavs"></div>
+            <div class="bottomview">
+                <ul id="frist">
+                    <li><i></i>&nbsp;{{frist.name}};<span style="color: yellow;font-size: 16px">{{frist.value}}</span>元<span class="var1">{{frist.updown}}{{frist.varnum==0?"":frist.varnum}}</span></li>
+                    <li><b></b>&nbsp;{{second.name}};<span style="color: yellow;font-size: 16px">{{second.value}}</span>元<span class="var2">{{second.updown}}{{second.varnum==0?"":second.varnum}}</span></li>
+                    <li><s></s>&nbsp;{{third.name}};<span style="color: yellow;font-size: 16px">{{third.value}}</span>元<span class="var3">{{third.updown}}{{third.varnum==0?"":third.varnum}}</span></li>
+                </ul>
+                <ul>
+                    <li>{{ten1.name}}<span style="color: yellow">{{ten1.value}}</span>元 </li>
+                    <li>{{ten2.name}}<span style="color: yellow">{{ten2.value}}</span>元 </li>
+                    <li>{{ten3.name}}<span style="color: yellow">{{ten3.value}}</span>元</li>
+                    <li>{{ten4.name}}<span style="color: yellow">{{ten4.value}}</span>元 </li>
+                 </ul>
+                <ul>
+                    <li>{{ten5.name}}<span style="color: yellow">{{ten5.value}}</span>元 </li>
+                    <li>{{ten6.name }}<span style="color: yellow">{{ten6.value}}</span>元 </li>
+                    <li>{{ten7.name}}<span style="color: yellow">{{ten7.value}}</span>元 </li>
+                    <li>{{ten8.name}}<span style="color: yellow">{{ten8.value}}</span>元 </li>
+                </ul>
+            </div>
+        </div>
+        <div id="rightdiv">
+            <h4>登记注册情况年度对比</h4>
+            <div id="rightcavs1"></div>
+            <h4 id="otherh4">分税种收入情况</h4>
+            <div  id="rightcavs2"></div>
+            <div id="rightcavs3"></div>
+        </div>
+    </div>
+</body>
+</html>

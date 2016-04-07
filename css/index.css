@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+ul{
+
+}
+ul li{
+    list-style-type:none;
+    float: left;
+}
+#header{
+    height: 60px;
+    background-color: #043061;
+}
+#header>i{
+
+}
+body{
+    background-color: #000b1f;
+}
+.right{
+    height: 60px;
+    float: right;
+}
+.right>ul>li{
+    background-color:#043061;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #116cd7;
+}
+#section{
+    margin: 20px;
+}
+#leftdiv,#centerdiv,#rightdiv{
+    height: 640px;
+    float: left;
+    background-color: #00274f;
+    border: 1px solid #116cd7;
+    border-radius: 10px;
+}
+#leftdiv,#rightdiv{
+    width: 24%;
+    position: relative;
+}
+#centerdiv{
+    width: 49%;
+    margin: 0px 10px;
+}
+#leftdiv>ul>li>img{
+    float: left;
+    margin-top: 20px;
+    width: 45px;
+    height: 45px;
+}
+#leftdiv>ul>li>span{
+    display: inline-block;
+    height: 30px;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+#leftdiv>ul>li>span>span{
+   color: yellow;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#leftdiv>ul>li{
+    float: none;
+    width:90%;
+    margin : 0px 10px;
+    height: 80px;
+    border-bottom: 1px solid #116cd7;;
+}
+#linecavs{
+    position: absolute;
+    width: 120%;
+    left: -30px;
+    margin-top: 20px;
+    height: 300px
+}
+#mapcavs{
+    position: relative;
+    width: 100%;
+    height: 540px;
+}
+.bottomview{
+    position: relative;
+    top: -35px;
+    height: 140px;
+}
+.bottomview>ul{
+    margin-top: 10px;
+    width: 30%;
+    float: left;
+    margin-left: 15px;
+}
+.bottomview>ul>li{
+    margin-left: 10%;
+    float: none;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+#frist>li{
+    display:block;
+    height: 40px;
+}
+#rightcavs1{
+    width:120% ;
+    height:220px;
+    position: relative;
+    left: -30px;
+}
+#rightdiv>h4{
+    width:60%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px auto;
+    color: #0fc0ec;
+    border: 1px solid #0fc0ec;
+    border-radius: 10px;
+
+}
+
+#rightcavs2{
+    width:120% ;
+    height:200px;
+    position: relative;
+    left: 0px;
+}
+#rightcavs3{
+    width: 120%;
+    height:200px;
+    position: relative;
+    left: -20px;
+    top: -50px;
+}
+.bottomview li{
+    position: relative;
+    left: 30px;
+
+}
+.bottomview i,.bottomview s,.bottomview b{
+    display: inline-block;
+    position: absolute;
+    width:33px;
+    height:35px;
+    top:-5px;
+    left:-30px;
+}
+.bottomview i{
+    background: url(../imges/6.jpg) no-repeat center top;
+}
+.bottomview b{
+    background: url(../imges/7.jpg) no-repeat center top;
+}
+.bottomview s{
+    background: url(../imges/8.jpg) no-repeat center top;
+}
+.int{
+    font-size: 18px;
+    font-weight:bold;
+    display: none;
+    color: #2cf80b;
+}
+.var1,.var2,.var3{
+    position: absolute;
+    left: 90%;
+    color:#e72a0f
+}
+/*以下是全省纳税人登记注册情况样式*/
+.leftview{
+    float: left;
+    width: 65%;
+    height:95%;
+    border: 1px solid #000;
+}
+.rightview{
+    float: left;
+    width: 33%;
+    height: 100%;
+    border: 1px solid #000;
+}

@@ -1,0 +1,51 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.box{
+    padding: 0 8.3rem;
+}
+.topBox{
+    width: 100%;
+    text-align: center;
+    margin: 2.5rem auto 6rem;
+}
+.topBox .title{
+    height: 5rem;
+    background: url("../imges/titleBackground.png") no-repeat;
+    background-position: 50%;
+    line-height: 5rem;
+    font-size: 1.9rem;
+    color: #010a2a;
+    font-weight: bold;
+}
+.leftBox{
+    width: 50%;
+    height: 55rem;
+    float: left;
+}
+.rightBox{
+    width: 50%;
+    height: 55rem;
+    float: right;
+}
+.footBox{
+    text-align: center;
+    margin-bottom: 4rem;
+
+}
+.footBox ul li{
+    display: inline;
+}
+.footBox ul li:nth-child(2){
+    margin: 0 2rem;
+}

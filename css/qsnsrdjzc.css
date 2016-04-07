@@ -1,0 +1,84 @@
+body{
+    background: url("../imges/qsnsrdjzcBackground.png") no-repeat;
+    background-size: 100%;
+}
+.qsnsrdjzcRightBox{
+    height: 66.3%;
+    width: 84.3%;
+    float: right;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcTitle{
+    height: 9.6rem;
+    width: 100%;
+    border: 1px solid #052b80;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(1,46,138,0.3) none repeat scroll !important;
+    /*IE背景透明*/
+    background-color: #012e8a;
+    filter: alpha(opacity=30);
+    /*-moz-opacity: 0.3;*/
+    /*-khtml-opacity: 0.3;*/
+    /*opacity: 0.3;*/
+}
+.qsnsrdjzcRightBox .qsnsrdjzcTitle p{
+    margin: 2rem 0 0 2rem;
+    position: relative;  /*IE背景透明文字不透明*/
+}
+.qsnsrdjzcRightBox .qsnsrdjzcTitle p:first-child{
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcTitle p:nth-child(2){
+    font-size: 1.9rem;
+    color: #ffc321;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent{
+    height: 38rem;
+    width: 100%;
+    border: 1px solid #052b80;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(1,46,138,0.3) none repeat scroll !important;
+    /*IE背景透明*/
+    background-color: #012e8a;
+    filter: alpha(opacity=30);
+    /*-moz-opacity: 0.3;*/
+    /*-khtml-opacity: 0.3;*/
+    /*opacity: 0.3;*/
+    margin-top: 1rem;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul{
+    position: relative;
+    margin: 1.5rem 2rem 1.5rem 2rem;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul li{
+    height: 3rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(10,106,221,0.2) none repeat scroll !important;
+    /*IE背景透明*/
+    background-color: #012e8a;
+    filter: alpha(opacity=20);
+    /*-moz-opacity: 0.3;*/
+    /*-khtml-opacity: 0.3;*/
+    /*opacity: 0.3;*/
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul li span {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul li .dq{
+    margin-left: 3.4rem;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul li .hs{
+    margin-left: 12.2rem;
+}
+.qsnsrdjzcRightBox .qsnsrdjzcContent ul li .bfb{
+    margin-left: 15.1rem;
+}
