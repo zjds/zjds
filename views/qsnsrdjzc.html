@@ -7,34 +7,58 @@
     <link type="text/css" rel="stylesheet" href="../css/publicStyle.css">
     <!--样式-->
     <link type="text/css" rel="stylesheet" href="../css/qsnsrdjzc.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/esl.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/gg.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/shubiao.js"></script>
 </head>
-<body>
+<body ng-app="qsnsrdj">
     <div class="box">
         <div class="topBox">
             <p class="title">全省纳税人登记注册情况</p>
-            <!--<img src="../imges/titleBackground.png">-->
+            <!--<img src="./imges/titleBackground.png">-->
         </div>
         <div class="leftBox"></div>
-        <div class="rightBox">
+        <div class="rightBox" ng-controller="ListCtrl">
             <div class="qsnsrdjzcRightBox">
                 <div class="qsnsrdjzcTitle">
                     <p>纳税人登记注册户数</p>
-                    <p>88888888</p>
+                    <p>{{renshu}}</p>
                 </div>
                 <div class="qsnsrdjzcContent">
-                    <ul>
-                        <li><span class="dq">杭州</span><span class="hs">888户</span><span class="bfb">88%</span></li>
+                    <ul id="mysrocll" style="width:auto; overflow:hidden;padding:10px; line-height:1.5; margin-top:10px;">
+                        <li ><span class="dq">{{citydata[0].name}}</span><span class="hs">{{citydata[0].value}}</span><span class="bfb">{{citydata[0].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[1].name}}</span><span class="hs">{{citydata[1].value}}</span><span class="bfb">{{citydata[1].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[2].name}}</span><span class="hs">{{citydata[2].value}}</span><span class="bfb">{{citydata[2].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[3].name}}</span><span class="hs">{{citydata[3].value}}</span><span class="bfb">{{citydata[3].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[4].name}}</span><span class="hs">{{citydata[4].value}}</span><span class="bfb">{{citydata[4].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[5].name}}</span><span class="hs">{{citydata[5].value}}</span><span class="bfb">{{citydata[5].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[6].name}}</span><span class="hs">{{citydata[6].value}}</span><span class="bfb">{{citydata[6].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[7].name}}</span><span class="hs">{{citydata[7].value}}</span><span class="bfb">{{citydata[7].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[8].name}}</span><span class="hs">{{citydata[8].value}}</span><span class="bfb">{{citydata[8].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[9].name}}</span><span class="hs">{{citydata[9].value}}</span><span class="bfb">{{citydata[9].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[10].name}}</span><span class="hs">{{citydata[10].value}}</span><span class="bfb">{{citydata[10].bfb}}</span></li>
+                        <li ><span class="dq">{{citydata[11].name}}</span><span class="hs">{{citydata[11].value}}</span><span class="bfb">{{citydata[11].bfb}}</span></li>
+                        <!--ng-repeat有坑！-->
                     </ul>
+                    <div id="divInfo" style=""></div>
                 </div>
+
             </div>
         </div>
-        <div class="footBox">
-            <ul>
-                <li><img src="../imges/left.png"></li>
-                <li><img src="../imges/home.png"></li>
-                <li><img src="../imges/right.png"></li>
-            </ul>
-        </div>
+        <!--<div class="footBox">-->
+            <!--<ul>-->
+                <!--<li><img src="../imges/left.png"></li>-->
+                <!--<li><img src="../imges/home.png"></li>-->
+                <!--<li><img src="../imges/right.png"></li>-->
+            <!--</ul>-->
+        <!--</div>-->
     </div>
+    <script src="../js/qsnsrdj.js"></script>
+    <script>
+        jsScroll(document.getElementById('mysrocll'));
+    </script>
 </body>
 </html>

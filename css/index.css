@@ -6,6 +6,10 @@
 ul{
 
 }
+a:visited {color: #116cd7;}
+a{
+    text-decoration:none;
+}
 ul li{
     list-style-type:none;
     float: left;
@@ -24,6 +28,9 @@ body{
     height: 60px;
     float: right;
 }
+#moreproject:hover>#zzc{
+    display: block;
+}
 .right>ul>li{
     background-color:#043061;
     width: 100px;
@@ -31,6 +38,7 @@ body{
     line-height: 60px;
     text-align: center;
     color: #116cd7;
+    position: relative;
 }
 #section{
     margin: 20px;
@@ -129,9 +137,7 @@ body{
     color: #0fc0ec;
     border: 1px solid #0fc0ec;
     border-radius: 10px;
-
 }
-
 #rightcavs2{
     width:120% ;
     height:200px;
@@ -148,7 +154,6 @@ body{
 .bottomview li{
     position: relative;
     left: 30px;
-
 }
 .bottomview i,.bottomview s,.bottomview b{
     display: inline-block;
@@ -167,6 +172,28 @@ body{
 .bottomview s{
     background: url(../imges/8.jpg) no-repeat center top;
 }
+#zzc{
+    width:10rem;
+    z-index: 19999;
+    position: absolute;
+    background-color: #043061;
+    left:-1.5rem;
+    display: none;
+}
+
+#zzc >ul>li{
+    width: 10rem;
+    height: 3rem;
+}
+#zzc >ul>li:hover{
+    background-color: #0fc0ec;
+    color: #ffc321;
+}
+#zzc >ul>li>a{
+  position: relative;
+    top:-0.6rem;
+
+}
 .int{
     font-size: 18px;
     font-weight:bold;
@@ -182,12 +209,16 @@ body{
 .leftview{
     float: left;
     width: 65%;
-    height:95%;
+    height:auto;
     border: 1px solid #000;
 }
 .rightview{
     float: left;
     width: 33%;
-    height: 100%;
+    height: auto;
     border: 1px solid #000;
+}
+#mainnsdjqk{
+    width: 800px;
+    height: 600px;
 }

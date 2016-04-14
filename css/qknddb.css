@@ -7,15 +7,26 @@ body{
 }
 .qknddb .qknddbList li{
     border-bottom: 1px dashed #ddd;
-    padding: 1rem 0px 3rem;
+    padding: 0rem 0px 1rem;
 }
 .qknddb .qknddbList li .qknddbOption{
     font-size: 1.5rem;
     color: #ddd;
-    line-height: 5rem;
+    line-height: 3rem;
 }
 .qknddb .qknddbList li .qknddbData{
     font-size: 3rem;
     color: rgb(255, 195, 33);
     line-height: 4rem;
+}
+#leftBox{
+    width:60%;
+    height:30rem ;
+    float : left;
+    margin-top: 5rem;
+}
+.rightBox{
+    float: left;
+    width: 40%
+;
 }

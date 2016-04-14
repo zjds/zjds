@@ -17,7 +17,7 @@ a{
 .topBox{
     width: 100%;
     text-align: center;
-    margin: 2.5rem auto 6rem;
+    margin: 2.5rem auto 0rem;
 }
 .topBox .title{
     height: 5rem;
@@ -30,11 +30,13 @@ a{
 }
 .leftBox{
     width: 50%;
-    height: 55rem;
+    margin-top: 6rem;
+    height: 50rem;
     float: left;
 }
 .rightBox{
     width: 50%;
+    margin-top: 6rem;
     height: 55rem;
     float: right;
 }

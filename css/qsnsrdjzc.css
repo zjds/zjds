@@ -53,16 +53,21 @@ body{
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul{
     position: relative;
     margin: 1.5rem 2rem 1.5rem 2rem;
+    height: 90%;
+    overflow: hidden;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li{
     height: 3rem;
+    width: 100%;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     background: rgba(10,106,221,0.2) none repeat scroll !important;
     /*IE背景透明*/
+    margin-top: 1rem;
     background-color: #012e8a;
     filter: alpha(opacity=20);
+
     /*-moz-opacity: 0.3;*/
     /*-khtml-opacity: 0.3;*/
     /*opacity: 0.3;*/
@@ -74,11 +79,14 @@ body{
     line-height: 3rem;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .dq{
-    margin-left: 3.4rem;
+    /*margin-left: 3.4rem;*/
+    margin-left: 10%;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .hs{
-    margin-left: 12.2rem;
+    /*margin-left: 12.2rem;*/
+    margin-left: 30%;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .bfb{
-    margin-left: 15.1rem;
+    /*margin-left: 15.1rem;*/
+    float: right;
 }
