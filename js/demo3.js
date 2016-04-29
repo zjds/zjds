@@ -58,18 +58,33 @@ $(function () {
     },
     plotOptions: {
       series: {
-        events: {
-          legendItemClick: function(e) {
-            return false; // 直接 return false 即可禁用图例点击事件
-          }
-        }
+        //events: {
+        //  legendItemClick: function(e) {
+        //    return true; // 直接 return false 即可禁用图例点击事件
+        //  }
+        //}
       }
+    },
+    legend:{
+      //data:['注册登记数','注册登','注']
+
     },
     series: [{
       name:['注册登记数'],
-      data: [409917, 464082,507123, 466791, 564596, 569835, 571271,  {'color':'rgba(25,146,192, 0.3)','y':671271}],
-      showInLegend: false // 设置为 false 即为不显示在图例中
-    }]
+      data: [409917, 4642,507123, 4691, 5645, 5698, 5711,  {'color':'rgba(25,146,192, 0.3)','y':671271}],
+      //showInLegend: false // 设置为 false 即为不显示在图例中
+    },
+      {
+        name:['注册登'],
+        data: [40917, 4682,50123, 46791, 56596, 56983, 57127,  {'color':'rgba(25,146,192, 0.3)','y':671271}],
+        //showInLegend: false // 设置为 false 即为不显示在图例中
+      },
+      {
+        name:['注'],
+        data: [4917, 46482,50712, 46671, 56456, 5695, 57271,  {'color':'rgba(25,146,192, 0.3)','y':671271}],
+        //showInLegend: false // 设置为 false 即为不显示在图例中
+      }
+    ]
   });
   // 3d加载鼠标控制视角
   $(chart.container).bind('mousedown.hc touchstart.hc', function (e) {

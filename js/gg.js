@@ -17,7 +17,7 @@ var by = function(name){
       throw  ("error");
     }
   }
-}//���ݶ����ָ��ֵ,����json
+}//根据对象的指定值,排序json
 var sjjson={
     's2009':{"swbmsr":"250539890000","sssr":"159678240000","fssr":"90861650000","sbjjsr":"72647710000",
       "gesds":"30294630000", "qysds":"27194190000","qs":"108012340.97","yys":"66361610000",
@@ -47,4 +47,72 @@ var sjjson={
       "gesds":"65307064268.53", "qysds":"50187341480.91","qs":"23837122150.29","yys": "117788246689.45",
       "zys":"1139599865.66","tdsys":"13180548063.45","cjs":"27599018959.48","yhs":"6872862099.17","tdzzs":"20611246442.72",
       "fcs":"17665093251.9","ccs":"4202603376.93","yys1":"1310898.07","gdzys":"6165967106.58","ddzctjs":"0","qt":"0","bsj":""},
-  }//������ʷ����
+  }//公共历史数据
+var s2009=[];
+var s2010=[];
+var s2011=[];
+var s2012=[];var s2013=[]; var s2014=[]; var s2015=[];var hh2015 = []
+//算出其他数据
+sjjson.s2009.bsj=parseFloat(sjjson.s2009.zys)+parseFloat(sjjson.s2009.tdsys)+parseFloat(sjjson.s2009.cjs)+
+  parseFloat(sjjson.s2009.yhs)+parseFloat(sjjson.s2009.tdzzs)+parseFloat(sjjson.s2009.fcs)+
+  parseFloat(sjjson.s2009.ccs)+parseFloat(sjjson.s2009.yys1)+parseFloat(sjjson.s2009.gdzys)+
+  parseFloat(sjjson.s2009.ddzctjs)+parseFloat(sjjson.s2009.qt)+parseFloat(sjjson.s2009.gdzys);
+sjjson.s2010.bsj=parseFloat(sjjson.s2010.zys)+parseFloat(sjjson.s2010.tdsys)+parseFloat(sjjson.s2010.cjs)+
+  parseFloat(sjjson.s2010.yhs)+parseFloat(sjjson.s2010.tdzzs)+parseFloat(sjjson.s2010.fcs)+
+  parseFloat(sjjson.s2010.ccs)+parseFloat(sjjson.s2010.yys1)+parseFloat(sjjson.s2010.gdzys)+
+  parseFloat(sjjson.s2010.ddzctjs)+parseFloat(sjjson.s2010.qt)+parseFloat(sjjson.s2010.gdzys);
+sjjson.s2011.bsj=parseFloat(sjjson.s2011.zys)+parseFloat(sjjson.s2011.tdsys)+parseFloat(sjjson.s2011.cjs)+
+  parseFloat(sjjson.s2011.yhs)+parseFloat(sjjson.s2011.tdzzs)+parseFloat(sjjson.s2011.fcs)+
+  parseFloat(sjjson.s2011.ccs)+parseFloat(sjjson.s2011.yys1)+parseFloat(sjjson.s2011.gdzys)+
+  parseFloat(sjjson.s2011.ddzctjs)+parseFloat(sjjson.s2011.qt)+parseFloat(sjjson.s2011.gdzys);
+sjjson.s2012.bsj=parseFloat(sjjson.s2012.zys)+parseFloat(sjjson.s2012.tdsys)+parseFloat(sjjson.s2012.cjs)+
+  parseFloat(sjjson.s2012.yhs)+parseFloat(sjjson.s2012.tdzzs)+parseFloat(sjjson.s2012.fcs)+
+  parseFloat(sjjson.s2012.ccs)+parseFloat(sjjson.s2012.yys1)+parseFloat(sjjson.s2012.gdzys)+
+  parseFloat(sjjson.s2012.ddzctjs)+parseFloat(sjjson.s2012.qt)+parseFloat(sjjson.s2012.gdzys);
+sjjson.s2013.bsj=parseFloat(sjjson.s2013.zys)+parseFloat(sjjson.s2013.tdsys)+parseFloat(sjjson.s2013.cjs)+
+  parseFloat(sjjson.s2013.yhs)+parseFloat(sjjson.s2013.tdzzs)+parseFloat(sjjson.s2013.fcs)+
+  parseFloat(sjjson.s2013.ccs)+parseFloat(sjjson.s2013.yys1)+parseFloat(sjjson.s2013.gdzys)+
+  parseFloat(sjjson.s2013.ddzctjs)+parseFloat(sjjson.s2013.qt)+parseFloat(sjjson.s2013.gdzys);
+sjjson.s2014.bsj=parseFloat(sjjson.s2014.zys)+parseFloat(sjjson.s2014.tdsys)+parseFloat(sjjson.s2014.cjs)+
+  parseFloat(sjjson.s2014.yhs)+parseFloat(sjjson.s2014.tdzzs)+parseFloat(sjjson.s2014.fcs)+
+  parseFloat(sjjson.s2014.ccs)+parseFloat(sjjson.s2014.yys1)+parseFloat(sjjson.s2014.gdzys)+
+  parseFloat(sjjson.s2014.ddzctjs)+parseFloat(sjjson.s2014.qt)+parseFloat(sjjson.s2014.gdzys);
+sjjson.s2015.bsj=parseFloat(sjjson.s2015.zys)+parseFloat(sjjson.s2015.tdsys)+parseFloat(sjjson.s2015.cjs)+
+  parseFloat(sjjson.s2015.yhs)+parseFloat(sjjson.s2015.tdzzs)+parseFloat(sjjson.s2015.fcs)+
+  parseFloat(sjjson.s2015.ccs)+parseFloat(sjjson.s2015.yys1)+parseFloat(sjjson.s2015.gdzys)+
+  parseFloat(sjjson.s2015.ddzctjs)+parseFloat(sjjson.s2015.qt)+parseFloat(sjjson.s2015.gdzys);
+s2009.push({value:parseFloat(sjjson.s2009.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2009.qysds,2),name:'企业所得税'},
+  {value:parseFloat(sjjson.s2009.qs,2),name:'契税'},{value:parseFloat(sjjson.s2009.yys,2),name:'营业税'},
+  {value:parseFloat(sjjson.s2009.bsj,2),name:'其他'});
+s2010.push({value:parseFloat(sjjson.s2010.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2010.qysds,2),name:'企业所得税'},
+  {value:parseFloat(sjjson.s2010.qs,2),name:'契税'},{value:parseFloat(sjjson.s2010.yys,2),name:'营业税'},
+  {value:parseFloat(sjjson.s2010.bsj,2),name:'其他'});
+s2011.push({value:parseFloat(sjjson.s2011.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2011.qysds,2),name:'企业所得税'},
+  {value:parseFloat(sjjson.s2011.qs,2),name:'契税'},{value:parseFloat(sjjson.s2011.yys,2),name:'营业税'},
+  {value:parseFloat(sjjson.s2011.bsj,2),name:'其他'})
+s2012.push({value:parseFloat(sjjson.s2012.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2012.qysds,2),name:'企业所得税'},
+  {value:parseFloat(sjjson.s2012.qs,2),name:'契税'},{value:parseFloat(sjjson.s2012.yys,2),name:'营业税'},
+  {value:parseFloat(sjjson.s2012.bsj,2),name:'其他'})
+s2013.push({value:parseFloat(sjjson.s2013.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2013.qysds,2),name:'企业所得税'},
+{value:parseFloat(sjjson.s2013.qs,2),name:'契税'},{value:parseFloat(sjjson.s2013.yys,2),name:'营业税'},
+{value:parseFloat(sjjson.s2013.bsj,2),name:'其他'})
+s2014.push({value:parseFloat(sjjson.s2014.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2014.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2014.qs,2),name:'契税'},{value:parseFloat(sjjson.s2014.yys,2),name:'营业税'},
+    {value:parseFloat(sjjson.s2014.bsj,2),name:'其他'})
+s2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税',sliced:true, selected: true},{y:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
+    {y:parseFloat(sjjson.s2015.qs,2),name:'契税'},{y:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
+    {y:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
+hh2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{y:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
+    {y:parseFloat(sjjson.s2015.qs,2),name:'契税'},{y:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
+    {y:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
+for(i=0;i<s2009.length;i++){
+  s2009[i].value=(s2009[i].value/100000000).toFixed(2);
+  s2010[i].value=(s2010[i].value/100000000).toFixed(2);
+  s2011[i].value=(s2011[i].value/100000000).toFixed(2);
+  s2012[i].value=(s2012[i].value/100000000).toFixed(2);
+  s2013[i].value=(s2013[i].value/100000000).toFixed(2);
+  s2014[i].value=(s2014[i].value/100000000).toFixed(2);
+  s2015[i].y=parseFloat((s2015[i].y/100000000).toFixed(2));
+  hh2015[i].y=parseFloat((s2015[i].y/100000000).toFixed(2));
+
+}

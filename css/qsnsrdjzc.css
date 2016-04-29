@@ -1,7 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
 body{
     background: url("../imges/qsnsrdjzcBackground.png") no-repeat;
     background-size: 100%;
 }
+
 .qsnsrdjzcRightBox{
     height: 66.3%;
     width: 84.3%;
@@ -89,4 +95,12 @@ body{
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .bfb{
     /*margin-left: 15.1rem;*/
     float: right;
+}
+#img{
+    width:41rem;
+    height:44.6rem;
+    position: absolute;
+    left:12.3rem;
+    top:14.5rem;
+    z-index: -2;
 }

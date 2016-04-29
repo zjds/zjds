@@ -349,7 +349,7 @@ require(
     ]
     };
     lineChart.setOption(option);
-  });
+  }); //left折线
 require(
   [
     'echarts',
@@ -508,7 +508,7 @@ require(
             },
             emphasis:{
               label:{textStyle:{color:'#2d2925'},show:false},
-              borderColor:'rgba(200,249,137,1)',
+              borderColor:'rgba(200,249,137,0.1)',
               borderWidth:0.5,
               color:'#fa8201'
 
@@ -542,23 +542,9 @@ require(
               scaleSize:12,
               shadowBlur:20
             },
-            data :[{name:"绍兴"}],
+            data :[{name:"杭州"}],
             geoCoord: geoCoordflr
           },
-          markLine : {
-          symbol: ['arrow', 'arrow'],
-          symbolSize : 1,
-          effect :{ show: false,
-            period: 30,             // 运动周期，无单位，值越大越慢
-            color: '#fff',
-            shadowColor: 'rgba(220,220,220,0.4)',
-            opacity: 0.1,
-            shadowBlur : 1},
-          itemStyle : itemStyle(0),
-          smooth:true,
-          data : bluedata
-
-        }
         },
         {
           name: '浙江数据',
@@ -567,7 +553,7 @@ require(
           clickable:false,
           itedmStyle:{
             normal:{
-              borderColor:'rgba(100,149,237,1)',
+              borderColor:'rgba(100,149,237,0.1)',
               borderWidth:2,
               areaStyle:{
                 color: '#1b1b1b'
@@ -655,14 +641,14 @@ require(
       var aadata=[];//保存处理完成的结果集
       var str=',{data:[';//保存线性数据
       var strpont=',{data:[';//保存点状数据
-      var number=Math.floor(Math.random()*10+1);//处理结果的数量，仅demo，实际可删
+      var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删
       for(i=0, k={},l={};i<number;i++){
         var ronndnum=Math.floor(Math.random()*arrayObj.length);
-        mydata=[{'name':arrayObj[ronndnum]},{'name':'绍兴'}];
+        mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
         aadata.push(mydata);
       }
       for(i=0;i<aadata.length;i++){
-        str+='[{"name":"'+aadata[i][0].name+'"},{"name":"绍兴"}],';
+        str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
         //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
        strpont+='{name:"'+aadata[i][0].name+'"},';
       }
@@ -670,18 +656,20 @@ require(
       str=str.substring(0,(str.length-1))+']})';
       strpont=strpont.substring(0,(strpont.length-1))+']})'
       eval('myChart.addMarkPoint('+1+strpont);
-      setTimeout(function(){
+      var t = setTimeout(function(){
           eval('myChart.addMarkLine('+1+str);
+          clearTimeout(t);
       }
       ,1000);
-      setTimeout(function(){//回收canvas上的所有线跟点。
+      var r = setTimeout(function(){//回收canvas上的所有线跟点。
         for(i=0;i<aadata.length;i++){
-          eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 绍兴")');
+          eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
           eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
         }
-      },4000)
+        clearTimeout(r);
+      },6000)
     },2000)
-  });
+  });  //center地图
 require(
   [
     'echarts',
@@ -787,7 +775,7 @@ require(
       ]
     };
     rightChart1.setOption(option);
-  });
+  });  //right登记注册情况年度对比
 require(
   [
     'echarts',
@@ -799,69 +787,6 @@ require(
 
    // var idx = 1;
     //{value: idx * 128 + 80,  name:'个人所得税'},
-    var s2009=[];
-    var s2010=[];
-    var s2011=[];
-    var s2012=[];var s2013=[]; var s2014=[]; var s2015=[];
-    //算出其他数据
-    sjjson.s2009.bsj=parseFloat(sjjson.s2009.zys)+parseFloat(sjjson.s2009.tdsys)+parseFloat(sjjson.s2009.cjs)+
-      parseFloat(sjjson.s2009.yhs)+parseFloat(sjjson.s2009.tdzzs)+parseFloat(sjjson.s2009.fcs)+
-      parseFloat(sjjson.s2009.ccs)+parseFloat(sjjson.s2009.yys1)+parseFloat(sjjson.s2009.gdzys)+
-      parseFloat(sjjson.s2009.ddzctjs)+parseFloat(sjjson.s2009.qt)+parseFloat(sjjson.s2009.gdzys);
-    sjjson.s2010.bsj=parseFloat(sjjson.s2010.zys)+parseFloat(sjjson.s2010.tdsys)+parseFloat(sjjson.s2010.cjs)+
-      parseFloat(sjjson.s2010.yhs)+parseFloat(sjjson.s2010.tdzzs)+parseFloat(sjjson.s2010.fcs)+
-      parseFloat(sjjson.s2010.ccs)+parseFloat(sjjson.s2010.yys1)+parseFloat(sjjson.s2010.gdzys)+
-      parseFloat(sjjson.s2010.ddzctjs)+parseFloat(sjjson.s2010.qt)+parseFloat(sjjson.s2010.gdzys);
-    sjjson.s2011.bsj=parseFloat(sjjson.s2011.zys)+parseFloat(sjjson.s2011.tdsys)+parseFloat(sjjson.s2011.cjs)+
-      parseFloat(sjjson.s2011.yhs)+parseFloat(sjjson.s2011.tdzzs)+parseFloat(sjjson.s2011.fcs)+
-      parseFloat(sjjson.s2011.ccs)+parseFloat(sjjson.s2011.yys1)+parseFloat(sjjson.s2011.gdzys)+
-      parseFloat(sjjson.s2011.ddzctjs)+parseFloat(sjjson.s2011.qt)+parseFloat(sjjson.s2011.gdzys);
-    sjjson.s2012.bsj=parseFloat(sjjson.s2012.zys)+parseFloat(sjjson.s2012.tdsys)+parseFloat(sjjson.s2012.cjs)+
-      parseFloat(sjjson.s2012.yhs)+parseFloat(sjjson.s2012.tdzzs)+parseFloat(sjjson.s2012.fcs)+
-      parseFloat(sjjson.s2012.ccs)+parseFloat(sjjson.s2012.yys1)+parseFloat(sjjson.s2012.gdzys)+
-      parseFloat(sjjson.s2012.ddzctjs)+parseFloat(sjjson.s2012.qt)+parseFloat(sjjson.s2012.gdzys);
-    sjjson.s2013.bsj=parseFloat(sjjson.s2013.zys)+parseFloat(sjjson.s2013.tdsys)+parseFloat(sjjson.s2013.cjs)+
-      parseFloat(sjjson.s2013.yhs)+parseFloat(sjjson.s2013.tdzzs)+parseFloat(sjjson.s2013.fcs)+
-      parseFloat(sjjson.s2013.ccs)+parseFloat(sjjson.s2013.yys1)+parseFloat(sjjson.s2013.gdzys)+
-      parseFloat(sjjson.s2013.ddzctjs)+parseFloat(sjjson.s2013.qt)+parseFloat(sjjson.s2013.gdzys);
-    sjjson.s2014.bsj=parseFloat(sjjson.s2014.zys)+parseFloat(sjjson.s2014.tdsys)+parseFloat(sjjson.s2014.cjs)+
-      parseFloat(sjjson.s2014.yhs)+parseFloat(sjjson.s2014.tdzzs)+parseFloat(sjjson.s2014.fcs)+
-      parseFloat(sjjson.s2014.ccs)+parseFloat(sjjson.s2014.yys1)+parseFloat(sjjson.s2014.gdzys)+
-      parseFloat(sjjson.s2014.ddzctjs)+parseFloat(sjjson.s2014.qt)+parseFloat(sjjson.s2014.gdzys);
-    sjjson.s2015.bsj=parseFloat(sjjson.s2015.zys)+parseFloat(sjjson.s2015.tdsys)+parseFloat(sjjson.s2015.cjs)+
-      parseFloat(sjjson.s2015.yhs)+parseFloat(sjjson.s2015.tdzzs)+parseFloat(sjjson.s2015.fcs)+
-      parseFloat(sjjson.s2015.ccs)+parseFloat(sjjson.s2015.yys1)+parseFloat(sjjson.s2015.gdzys)+
-      parseFloat(sjjson.s2015.ddzctjs)+parseFloat(sjjson.s2015.qt)+parseFloat(sjjson.s2015.gdzys);
-    s2009.push({value:parseFloat(sjjson.s2009.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2009.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2009.qs,2),name:'契税'},{value:parseFloat(sjjson.s2009.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2009.bsj,2),name:'其他'});
-    s2010.push({value:parseFloat(sjjson.s2010.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2010.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2010.qs,2),name:'契税'},{value:parseFloat(sjjson.s2010.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2010.bsj,2),name:'其他'});
-    s2011.push({value:parseFloat(sjjson.s2011.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2011.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2011.qs,2),name:'契税'},{value:parseFloat(sjjson.s2011.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2011.bsj,2),name:'其他'})
-    s2012.push({value:parseFloat(sjjson.s2012.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2012.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2012.qs,2),name:'契税'},{value:parseFloat(sjjson.s2012.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2012.bsj,2),name:'其他'})
-    s2013.push({value:parseFloat(sjjson.s2013.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2013.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2013.qs,2),name:'契税'},{value:parseFloat(sjjson.s2013.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2013.bsj,2),name:'其他'})
-    s2014.push({value:parseFloat(sjjson.s2014.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2014.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2014.qs,2),name:'契税'},{value:parseFloat(sjjson.s2014.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2014.bsj,2),name:'其他'})
-    s2015.push({value:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
-      {value:parseFloat(sjjson.s2015.qs,2),name:'契税'},{value:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
-      {value:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
-    for(i=0;i<s2009.length;i++){
-      s2009[i].value=(s2009[i].value/100000000).toFixed(2);
-      s2010[i].value=(s2010[i].value/100000000).toFixed(2);
-      s2011[i].value=(s2011[i].value/100000000).toFixed(2);
-      s2012[i].value=(s2012[i].value/100000000).toFixed(2);
-      s2013[i].value=(s2013[i].value/100000000).toFixed(2);
-      s2014[i].value=(s2014[i].value/100000000).toFixed(2);
-      s2015[i].value=(s2015[i].value/100000000).toFixed(2);
-    }
     var viewdata=[];
     var newname="个人所得税";
     var dataIndex=0;
@@ -996,7 +921,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2015
+              data:hh2015
             }
           ]
         },
@@ -1120,4 +1045,4 @@ require(
       };
       myChart2.setOption(option2);
     });
-  })
+  });  //分税种收入情况

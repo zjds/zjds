@@ -31,19 +31,20 @@ a{
 .leftBox{
     width: 50%;
     margin-top: 6rem;
-    height: 50rem;
+    /*height: 50rem;*/
     float: left;
 }
 .rightBox{
     width: 50%;
     margin-top: 6rem;
-    height: 55rem;
+    /*height: 50rem;*/
     float: right;
 }
 .footBox{
+    width: 100%;
     text-align: center;
     margin-bottom: 4rem;
-
+    float: left;
 }
 .footBox ul li{
     display: inline;

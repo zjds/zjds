@@ -108,7 +108,7 @@ document.documentElement.onmousemove = function(evt){
 document.documentElement.onmouseup = function(evt){
   if(!scrollMoveObj)return;
   if(scrollMoveObj.scrollBar.className == 'divInfo') {
-    scrollMoveObj.scrollBarIndex.style.backgroundColor = '#035FB6';
+    scrollMoveObj.scrollBarIndex.style.backgroundColor = '#035FB6';//ÑÕÉ«
   }
   scrollMoveObj = null;
   document.body.onselectstart = function(){return true};

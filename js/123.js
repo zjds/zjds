@@ -124,31 +124,36 @@ require(
       {name:'衢州',geoCoord: [118.88,28.97]},
       {name:'兰溪',geoCoord: [119.48,29.19]},
       {name:'永康',geoCoord: [120.02,28.92]},
-      {name:'常山',geoCoord: [118.5 ,28.9]},    ];
-    //require('echarts/util/mapData/params').params.zj= {
-    //  getGeoJson: function (callback) {
-    //    $.getJSON('../zhejiang.json', function (data) {
-    //      // 压缩后的地图数据必须使用 decode 函数转换
-    //      callback(require('echarts/util/mapData/params').decode(data));
-    //    })
-    //  }
-    //  //取得浙江省地图。。。没法调出二级。。。暂时放弃
-    //}
+      {name:'常山',geoCoord: [118.5 ,28.9]}];
+
     require('echarts/util/mapData/params').params.zj= {
       getGeoJson: function (callback) {
-        $.ajax({
-          url: "../xml/32432.svg",
-          dataType: 'xml',
-          success: function(xml) {
-            callback(xml)
-          }
-        });
+        $.getJSON('../zhejiangv1.json', function (data) {
+          // 压缩后的地图数据必须使用 decode 函数转换
+          callback(require('echarts/util/mapData/params').decode(data));
+        })
       }
+      //取得浙江省地图。。。没法调出二级。。。暂时放弃
     }
+    //require('echarts/util/mapData/params').params.zj= {
+    //  getGeoJson: function (callback) {
+    //    $.ajax({
+    //      url: "../xml/001.svg",
+    //      dataType: 'xml',
+    //      success: function(xml) {
+    //        callback(xml)
+    //      }
+    //    });
+    //  }
+    //}
+    //require('echarts/util/mapData/params').params.zj = {
+    //  getGeoJson: function (callback) {
+    //    $.getJSON('../zhejiangtext.json',callback);
+    //  }
+    //}
     option = {
       backgroundColor: 'rgba(255, 255, 255, 0.1)',
       color: [
-        'rgba(255, 255, 242, 0.3)',
         'rgba(14, 241, 242, 0.3)',
         'rgba(37, 140, 249, 0.3)'
       ],
@@ -185,7 +190,7 @@ require(
           name: '个体',
           type: 'map',
           mapType: 'zj',
-
+          roam: false,
           itemStyle:{
             normal:{
               borderColor:'rgba(100,149,237,1)',
@@ -211,7 +216,7 @@ require(
             },
             data : (function(){
               var data = [];
-              var len = 2000;
+              var len = 5000;
               var geoCoord
               while(len--) {
                 geoCoord = placeList[len % placeList.length].geoCoord;
@@ -228,57 +233,10 @@ require(
             })()
           }
         },
-        //{
-        //  name: '中',
-        //  type: 'map',
-        //  mapType: 'zj',
-        //  itemStyle:{
-        //    normal:{
-        //      borderColor:'rgba(100,149,237,1)',
-        //      borderWidth:1.5,
-        //      areaStyle:{
-        //        color: 'rgba(30,31,109,0.3)'
-        //      }
-        //    },
-        //    emphasis:{
-        //      label:{textStyle:{color:'#2d2925'},show:false},
-        //      borderColor:'rgba(200,249,137,0.3)',
-        //      borderWidth:0.5,
-        //      color:'rgba(200,249,137,0.3)'
-        //
-        //    }
-        //  },
-        //  data :citydata,
-        //  markPoint : {
-        //    symbolSize: 3,
-        //    large: true,
-        //    effect : {
-        //      show: true
-        //    },
-        //    data : (function(){
-        //      var data = [];
-        //      var len = 500;
-        //      var geoCoord
-        //      while(len--) {
-        //        geoCoord = placeList[len % placeList.length].geoCoord;
-        //        data.push({
-        //          name : placeList[len % placeList.length].name + len,
-        //          value : 50,
-        //          geoCoord : [
-        //            geoCoord[0]+Math.random()*0.5-0.282,
-        //            geoCoord[1]+ Math.random()*0.5-0.212
-        //          ]
-        //        })
-        //      }
-        //      return data;
-        //    })()
-        //  }
-        //},
         {
           name: '企业',
           type: 'map',
           mapType: 'zj',
-          showLegendSymbol:false,
           itemStyle:{
             normal:{
               borderColor:'rgba(100,149,237,1)',
@@ -297,15 +255,63 @@ require(
           },
           data :citydata,
           markPoint : {
-            symbol : 'diamond',
-            symbolSize: 6,
+            symbolSize: 3,
             large: true,
             effect : {
               show: true
             },
-            data : placeList
+            data : (function(){
+              var data = [];
+              var len = 1500;
+              var geoCoord
+              while(len--) {
+                geoCoord = placeList[len % placeList.length].geoCoord;
+                data.push({
+                  name : placeList[len % placeList.length].name + len,
+                  value : 50,
+                  geoCoord : [
+                    geoCoord[0]+Math.random()*0.5-0.282,
+                    geoCoord[1]+ Math.random()*0.5-0.212
+                  ]
+                })
+              }
+              return data;
+            })()
           }
-        }
+        },
+        //{
+        //  name: '企业',
+        //  type: 'map',
+        //  mapType: 'zj',
+        //  roam: false,
+        //  showLegendSymbol:false,
+        //  itemStyle:{
+        //    normal:{
+        //      borderColor:'rgba(100,149,237,1)',
+        //      borderWidth:1.5,
+        //      areaStyle:{
+        //        color: 'rgba(30,31,109,0.3)'
+        //      }
+        //    },
+        //    emphasis:{
+        //      label:{textStyle:{color:'#2d2925'},show:false},
+        //      borderColor:'rgba(200,249,137,0.3)',
+        //      borderWidth:0.5,
+        //      color:'rgba(200,249,137,0.3)'
+        //
+        //    }
+        //  },
+        // data :citydata,
+        //  markPoint : {
+        //    symbol : 'diamond',
+        //    symbolSize: 6,
+        //    large: true,
+        //    effect : {
+        //      show: true
+        //    },
+        //    data : placeList
+        //  }
+        //}
       ]
     };
     myChart.setOption(option);

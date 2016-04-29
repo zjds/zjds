@@ -164,13 +164,13 @@ body{
     left:-30px;
 }
 .bottomview i{
-    background: url(../imges/6.jpg) no-repeat center top;
+    background: url(../imges/no1.png) no-repeat center top;
 }
 .bottomview b{
-    background: url(../imges/7.jpg) no-repeat center top;
+    background: url(../imges/no2.png) no-repeat center top;
 }
 .bottomview s{
-    background: url(../imges/8.jpg) no-repeat center top;
+    background: url(../imges/no3.png) no-repeat center top;
 }
 #zzc{
     width:10rem;

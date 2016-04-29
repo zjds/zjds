@@ -78,7 +78,8 @@ require(
         {
           type : 'value',
           scale:true,
-          boundaryGap: [0.01, 0.01]
+          boundaryGap: [0.01, 0.01],
+          position:'right'
         }
       ],
       series : [
