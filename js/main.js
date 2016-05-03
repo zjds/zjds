@@ -791,7 +791,7 @@ require(
     var newname="个人所得税";
     var dataIndex=0;
     viewdata.push(s2009[dataIndex].value,s2010[dataIndex].value,s2011[dataIndex].value,
-      s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,s2015[dataIndex].value);
+      s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,hh2015[dataIndex].value);
     option = {
       timeline : {
         x:0,//左侧距离
@@ -989,7 +989,7 @@ require(
     right2.on('click', function (param) {
      newname=param.name;
       dataIndex=param.dataIndex;
-     viewdata=[s2009[dataIndex].value,s2010[dataIndex].value,s2011[dataIndex].value,s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,s2015[dataIndex].value];
+     viewdata=[s2009[dataIndex].value,s2010[dataIndex].value,s2011[dataIndex].value,s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,hh2015[dataIndex].value];
       option2 = {
         tooltip : {
           trigger: 'axis'

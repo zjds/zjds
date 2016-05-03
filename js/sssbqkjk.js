@@ -319,14 +319,16 @@ require(
             str=str.substring(0,(str.length-1))+']})';
             strpont=strpont.substring(0,(strpont.length-1))+']})'
             eval('myChart.addMarkPoint('+1+strpont);
-            setTimeout(function(){
+            var t = setTimeout(function(){
                     eval('myChart.addMarkLine('+1+str);
+                    clearTimeout(t);
                 }
                 ,1000);
-            setTimeout(function(){//回收canvas上的所有线跟点。
+            var r = setTimeout(function(){//回收canvas上的所有线跟点。
                 for(i=0;i<aadata.length;i++){
                     eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
                     eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
+                    clearTimeout(r);
                 }
             },6000)
         },2000)
