@@ -6,28 +6,31 @@
  */
 
 var nulldata=[];
+var linedata=[];
+linedata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y),parseFloat(s2015[0].y)*1.2)
 nulldata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y))
-nulldata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(s2015[0].value)*1.2})
+nulldata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(s2015[0].y)*1.2})
 var zhudata= [409917, 464082,507123, 466791, 564596, 569835, 571271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata2=[809917, 5464082,407123, 366791, 264596, 469835, 271271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata3= [49917, 46402,50712, 466791, 56496, 56835, 57271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata4=[80917, 546482,47123, 36791, 26496, 46985, 21271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata5= [40917, 46482,5023, 4661, 5645, 56985, 57121,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata6= [402917, 146482,15023, 24661, 35645,156985, 257121,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
-console.log(nulldata);
+// console.log(nulldata);
 function choose(n){
   var viewdata=[];
   for(i=0;i<s2015.length;i++){
    if(s2015[i].name==n){
-     viewdata.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[0].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(s2015[i].value))
-     viewdata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(s2015[i].value)*1.2})
+     viewdata.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[0].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(hh2015[i].value))
+     viewdata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(hh2015[i].value)*1.2})
+     // console.log(viewdata);
     return viewdata
    }
   }
 }
 var hs2015=[];
 for(i=0;i<s2015.length;i++){
-  hs2015.push([s2015[i].name,parseFloat(s2015[i].value)]);
+  hs2015.push([s2015[i].name,parseFloat(s2015[i].y)]);
   hs2015[0].sliced = true;
   //console.log(hs2015);
 }
@@ -38,14 +41,14 @@ var choosePieData = function(n) {
   //var pieData = [];
   //console.log(sjjson[m]);
   //josn转化为数组
-  data.push({y:parseFloat(sjjson[m].gesds,2),name:'个人所得税',sliced:true, selected: true},{y:parseFloat(sjjson[m].qysds,2),name:'企业所得税'},
+  data.push({y:parseFloat(sjjson[m].gesds,2),name:'个人所得税'},{y:parseFloat(sjjson[m].qysds,2),name:'企业所得税'},
       {y:parseFloat(sjjson[m].qs,2),name:'契税'},{y:parseFloat(sjjson[m].yys,2),name:'营业税'},
       {y:parseFloat(sjjson[m].bsj,2),name:'其他'});
-  console.log(data[1]);
+  // console.log(data[1]);
   for(i=0;i<data.length;i++) {
-    data[i].y.value = (data[i].y / 100000000).toFixed(2)
+    data[i].y = parseFloat((data[i].y / 100000000).toFixed(2))
   }
-  console.log(data);
+  // console.log(data);
   ////转化为图形要求格式，数组嵌套数组
   //for(var i=0;i<data.length;i++){
   //  //console.log("进来了");
@@ -130,10 +133,16 @@ $(function () {
       }
     },
     series: [{
-      name:['注册登记数'],
+      name:['收入(亿元)'],
       data: nulldata,
       showInLegend: false // 设置为 false 即为不显示在图例中
-    }]
+    },
+      {
+        name:['收入(亿元)'],
+        data:linedata,
+        type:'line',
+        color:'#fff'
+      }]
   });
   // 3d加载鼠标控制视角
   $(chart.container).bind('mousedown.hc touchstart.hc', function (e) {
@@ -244,7 +253,7 @@ $(function () {
     },
     series: [{
       type: 'pie',
-      name: 'Browser share',
+      name: '收入(亿元)',
       data:s2015
     }]
   });
