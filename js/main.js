@@ -282,13 +282,13 @@ require(
           type:'line',
           stack: '',
           itemStyle:
-            {normal: {
-              lineStyle: {
-                type: 'dotted'
-              }
+          {normal: {
+            lineStyle: {
+              type: 'dotted'
             }
+          }
           },
-          data:['-','-','-','-','-','-',sbjjsr[sbjjsr.length-2],(sbjjsr[sbjjsr.length-2].value*1.2).toFixed(2)]
+          data:[sbjjsr[0],sbjjsr[1],sbjjsr[2],sbjjsr[3],sbjjsr[4],sbjjsr[5],sbjjsr[sbjjsr.length-2],(sbjjsr[sbjjsr.length-2].value*1.2).toFixed(2)]
         },
         {
           name:'非税收入',
@@ -307,13 +307,7 @@ require(
             }
           }
           },
-          data:['-','-','-','-','-','-',fssr[fssr.length-2],(fssr[fssr.length-2].value*1.2).toFixed(2)]
-        },
-        {
-          name:'税收收入',
-          type:'line',
-          stack: '',
-          data:sssr
+          data:[fssr[0],fssr[1],fssr[2],fssr[3],fssr[4],fssr[5],fssr[fssr.length-2],(fssr[fssr.length-2].value*1.2).toFixed(2)]
         },
         {
           name:'税收收入',
@@ -326,8 +320,15 @@ require(
             }
           }
           },
-          data:['-','-','-','-','-','-',sssr[sssr.length-2],(sssr[sssr.length-2].value*1.2).toFixed(2)]
+          data:[sssr[0],sssr[1],sssr[2],sssr[3],sssr[4],sssr[5],sssr[sssr.length-2],(sssr[sssr.length-2].value*1.2).toFixed(2)]
         },
+        {
+          name:'税收收入',
+          type:'line',
+          stack: '',
+          data:sssr
+        },
+
         {
           name:'地税组织收入',
           type:'line',
@@ -344,8 +345,8 @@ require(
             }
           }
           },
-          data:['-','-','-','-','-','-',dszzsr[dszzsr.length-2],(dszzsr[dszzsr.length-2].value*1.2).toFixed(2)]
-        },
+          data:[dszzsr[0],dszzsr[1],dszzsr[2],dszzsr[3],dszzsr[4],dszzsr[5],dszzsr[dszzsr.length-2],(dszzsr[dszzsr.length-2].value*1.2).toFixed(2)]
+        }
     ]
     };
     lineChart.setOption(option);
