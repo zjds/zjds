@@ -6,7 +6,7 @@
  */
 
 var nulldata=[];
-nulldata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].value))
+nulldata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y))
 nulldata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(s2015[0].value)*1.2})
 var zhudata= [409917, 464082,507123, 466791, 564596, 569835, 571271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata2=[809917, 5464082,407123, 366791, 264596, 469835, 271271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
@@ -14,6 +14,7 @@ var zhudata3= [49917, 46402,50712, 466791, 56496, 56835, 57271,  {'color':'rgba(
 var zhudata4=[80917, 546482,47123, 36791, 26496, 46985, 21271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata5= [40917, 46482,5023, 4661, 5645, 56985, 57121,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata6= [402917, 146482,15023, 24661, 35645,156985, 257121,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
+console.log(nulldata);
 function choose(n){
   var viewdata=[];
   for(i=0;i<s2015.length;i++){

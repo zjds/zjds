@@ -99,12 +99,12 @@ s2013.push({value:parseFloat(sjjson.s2013.gesds,2),name:'个人所得税'},{valu
 s2014.push({value:parseFloat(sjjson.s2014.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2014.qysds,2),name:'企业所得税'},
     {value:parseFloat(sjjson.s2014.qs,2),name:'契税'},{value:parseFloat(sjjson.s2014.yys,2),name:'营业税'},
     {value:parseFloat(sjjson.s2014.bsj,2),name:'其他'})
-s2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税',sliced:true, selected: true},{y:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
+s2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税',sliced:true,selected: true},{y:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
     {y:parseFloat(sjjson.s2015.qs,2),name:'契税'},{y:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
     {y:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
-hh2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{y:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
-    {y:parseFloat(sjjson.s2015.qs,2),name:'契税'},{y:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
-    {y:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
+hh2015.push({value:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2015.qs,2),name:'契税'},{value:parseFloat(sjjson.s2015.yys,2),name:'营业税'},
+    {value:parseFloat(sjjson.s2015.bsj,2),name:'其他'})
 for(i=0;i<s2009.length;i++){
   s2009[i].value=(s2009[i].value/100000000).toFixed(2);
   s2010[i].value=(s2010[i].value/100000000).toFixed(2);
@@ -113,6 +113,6 @@ for(i=0;i<s2009.length;i++){
   s2013[i].value=(s2013[i].value/100000000).toFixed(2);
   s2014[i].value=(s2014[i].value/100000000).toFixed(2);
   s2015[i].y=parseFloat((s2015[i].y/100000000).toFixed(2));
-  hh2015[i].y=parseFloat((s2015[i].y/100000000).toFixed(2));
+  hh2015[i].value=(hh2015[i].value/100000000).toFixed(2);
 
 }

@@ -982,6 +982,7 @@ require(
         }
       ]
     };
+    console.log(viewdata);
     setTimeout(function(){
       myChart2.setOption(option2);
     },800)
