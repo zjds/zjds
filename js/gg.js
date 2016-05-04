@@ -17,7 +17,7 @@ var by = function(name){
       throw  ("error");
     }
   }
-}//根据对象的指定值,排序json
+}//根据对象的指定值,排序json,税收收入数据
 var sjjson={
     's2009':{"swbmsr":"250688480284.44","sssr":"159678240000","fssr":"90861650000","sbjjsr":"72647710000",
       "gesds":"30294630000", "qysds":"27194190000","qs":"108012340.97","yys":"66361610000",
@@ -51,7 +51,8 @@ var sjjson={
 var s2009=[];
 var s2010=[];
 var s2011=[];
-var s2012=[];var s2013=[]; var s2014=[]; var s2015=[];var hh2015 = []
+var s2012=[];var s2013=[]; var s2014=[]; var s2015=[];var hh2015 = [];
+var y2009=[],y2010=[],y2011=[],y2012=[],y2013=[],y2014=[],y2015=[];
 //算出其他数据
 sjjson.s2009.bsj=parseFloat(sjjson.s2009.zys)+parseFloat(sjjson.s2009.tdsys)+parseFloat(sjjson.s2009.cjs)+
   parseFloat(sjjson.s2009.yhs)+parseFloat(sjjson.s2009.tdzzs)+parseFloat(sjjson.s2009.fcs)+
@@ -135,7 +136,7 @@ s2015.push({y:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税',sliced:tru
     {y:parseFloat(sjjson.s2015.yhs,2),name:'印花税'},{y:parseFloat(sjjson.s2015.tdzzs,2),name:'土地增值税'},
     {y:parseFloat(sjjson.s2015.fcs,2),name:'房产税'},{y:parseFloat(sjjson.s2015.ccs,2),name:'车船税'},
     {y:parseFloat(sjjson.s2015.yys1,2),name:'烟叶税'},{y:parseFloat(sjjson.s2015.gdzys,2),name:'耕地占用税'},
-    {y:parseFloat(sjjson.s2015.gdzctjs,2),name:'固定资产投资方向调节税'},{y:parseFloat(sjjson.s2015.qt,2),name:'其他'})
+    {y:parseFloat(sjjson.s2015.gdzctjs,2),name:'固定资产投资方向调节税'},{y:parseFloat(sjjson.s2015.qt,2),name:'其他'});
 hh2015.push({value:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
     {value:parseFloat(sjjson.s2015.qs,2),name:'契税'},{value:parseFloat(sjjson.s2015.yys,2),name:'营业税'}
     ,{value:parseFloat(sjjson.s2015.zys,2),name:'资源税'},
@@ -144,14 +145,48 @@ hh2015.push({value:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{val
     {value:parseFloat(sjjson.s2015.fcs,2),name:'房产税'},{value:parseFloat(sjjson.s2015.ccs,2),name:'车船税'},
     {value:parseFloat(sjjson.s2015.yys1,2),name:'烟叶税'},{value:parseFloat(sjjson.s2015.gdzys,2),name:'耕地占用税'},
     {value:parseFloat(sjjson.s2015.gdzctjs,2),name:'固定资产投资方向调节税'},{value:parseFloat(sjjson.s2015.qt,2),name:'其他'})
-for(i=0;i<s2009.length;i++){
-  s2009[i].value=(s2009[i].value/100000000).toFixed(2);
-  s2010[i].value=(s2010[i].value/100000000).toFixed(2);
-  s2011[i].value=(s2011[i].value/100000000).toFixed(2);
-  s2012[i].value=(s2012[i].value/100000000).toFixed(2);
-  s2013[i].value=(s2013[i].value/100000000).toFixed(2);
-  s2014[i].value=(s2014[i].value/100000000).toFixed(2);
-  s2015[i].y=parseFloat((s2015[i].y/100000000).toFixed(2));
-  hh2015[i].value=(hh2015[i].value/100000000).toFixed(2);
-
+y2009.push({value:parseFloat(sjjson.s2009.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2009.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2009.qs,2),name:'契税'},{value:parseFloat(sjjson.s2009.yys,2),name:'营业税'},
+    {value:parseFloat(sjjson.s2009.bsj,2),name:'其他'});
+y2010.push({value:parseFloat(sjjson.s2010.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2010.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2010.qs,2),name:'契税'},{value:parseFloat(sjjson.s2010.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2010.bsj,2),name:'其他'});
+y2011.push({value:parseFloat(sjjson.s2011.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2011.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2011.qs,2),name:'契税'},{value:parseFloat(sjjson.s2011.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2011.bsj,2),name:'其他'});
+y2012.push({value:parseFloat(sjjson.s2012.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2012.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2012.qs,2),name:'契税'},{value:parseFloat(sjjson.s2012.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2012.bsj,2),name:'其他'});
+y2013.push({value:parseFloat(sjjson.s2013.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2013.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2013.qs,2),name:'契税'},{value:parseFloat(sjjson.s2013.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2013.bsj,2),name:'其他'});
+y2014.push({value:parseFloat(sjjson.s2014.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2014.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2014.qs,2),name:'契税'},{value:parseFloat(sjjson.s2014.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2014.bsj,2),name:'其他'});
+y2015.push({value:parseFloat(sjjson.s2015.gesds,2),name:'个人所得税'},{value:parseFloat(sjjson.s2015.qysds,2),name:'企业所得税'},
+    {value:parseFloat(sjjson.s2015.qs,2),name:'契税'},{value:parseFloat(sjjson.s2015.yys,2),name:'营业税'}
+    ,{value:parseFloat(sjjson.s2015.bsj,2),name:'其他'});
+for(i=0;i<s2009.length;i++) {
+  s2009[i].value = (s2009[i].value / 100000000).toFixed(2);
+  s2010[i].value = (s2010[i].value / 100000000).toFixed(2);
+  s2011[i].value = (s2011[i].value / 100000000).toFixed(2);
+  s2012[i].value = (s2012[i].value / 100000000).toFixed(2);
+  s2013[i].value = (s2013[i].value / 100000000).toFixed(2);
+  s2014[i].value = (s2014[i].value / 100000000).toFixed(2);
+  s2015[i].y = parseFloat((s2015[i].y / 100000000).toFixed(2));
+  hh2015[i].value = (hh2015[i].value / 100000000).toFixed(2);
 }
+for(i=0;i<y2009.length;i++){
+  y2009[i].value = (y2009[i].value / 100000000).toFixed(2);
+  y2010[i].value = (y2010[i].value / 100000000).toFixed(2);
+  y2011[i].value = (y2011[i].value / 100000000).toFixed(2);
+  y2012[i].value = (y2012[i].value / 100000000).toFixed(2);
+  y2013[i].value = (y2013[i].value / 100000000).toFixed(2);
+  y2014[i].value = (y2014[i].value / 100000000).toFixed(2);
+  y2015[i].value = (y2015[i].value / 100000000).toFixed(2);
+}
+
+// //非税收数据
+// var hzsjjosn = {
+//   "2009":{"fsssr"}
+// }
