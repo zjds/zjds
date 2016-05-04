@@ -21,11 +21,19 @@ function choose(n){
   var viewdata=[];
   for(i=0;i<s2015.length;i++){
    if(s2015[i].name==n){
-     viewdata.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[0].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(hh2015[i].value))
+     viewdata.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[i].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(hh2015[i].value))
      viewdata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(hh2015[i].value)*1.2})
-     // console.log(viewdata);
     return viewdata
    }
+  }
+}
+function chooseLineData(n) {
+  var lineViewData=[];
+  for(i=0;i<s2015.length;i++){
+    if(s2015[i].name==n){
+      lineViewData.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[i].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(s2015[i].y),parseFloat(s2015[i].y)*1.2)
+      return lineViewData
+    }
   }
 }
 var hs2015=[];
@@ -42,8 +50,13 @@ var choosePieData = function(n) {
   //console.log(sjjson[m]);
   //josn转化为数组
   data.push({y:parseFloat(sjjson[m].gesds,2),name:'个人所得税'},{y:parseFloat(sjjson[m].qysds,2),name:'企业所得税'},
-      {y:parseFloat(sjjson[m].qs,2),name:'契税'},{y:parseFloat(sjjson[m].yys,2),name:'营业税'},
-      {y:parseFloat(sjjson[m].bsj,2),name:'其他'});
+      {y:parseFloat(sjjson[m].qs,2),name:'契税'},{y:parseFloat(sjjson[m].yys,2),name:'营业税'}
+      ,{y:parseFloat(sjjson.s2015.zys,2),name:'资源税'},
+      {y:parseFloat(sjjson.s2015.tdsys,2),name:'土地使用税'},{y:parseFloat(sjjson.s2015.cjs,2),name:'城建税'},
+      {y:parseFloat(sjjson.s2015.yhs,2),name:'印花税'},{y:parseFloat(sjjson.s2015.tdzzs,2),name:'土地增值税'},
+      {y:parseFloat(sjjson.s2015.fcs,2),name:'房产税'},{y:parseFloat(sjjson.s2015.ccs,2),name:'车船税'},
+      {y:parseFloat(sjjson.s2015.yys1,2),name:'烟叶税'},{y:parseFloat(sjjson.s2015.gdzys,2),name:'耕地占用税'},
+      {y:parseFloat(sjjson.s2015.gdzctjs,2),name:'固定资产投资方向调节税'},{y:parseFloat(sjjson.s2015.qt,2),name:'其他'});
   // console.log(data[1]);
   for(i=0;i<data.length;i++) {
     data[i].y = parseFloat((data[i].y / 100000000).toFixed(2))
@@ -240,12 +253,14 @@ $(function () {
         },
         events: {
           click: function(e) { //e为点击事件，带有指向当前数据指针
-            //console.log(e);
+            console.log(e);
             //console.log(e.point);
             //console.log(chart);
+            console.log(chartPie);
             //chart.series[0].setData(choose(e.point.name));//动画
             //chart.series[0].setData(zhudata);// 不需要动画
             chart.series[0].setData(choose(e.point.name));
+            chart.series[1].setData(chooseLineData(e.point.name));
             //根据点击动态刷新相应的顺序
           }
         }
