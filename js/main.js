@@ -540,7 +540,7 @@ require(
               type: 'scale',
               loop: true,
               period: 20,
-              scaleSize:12,
+              scaleSize:20,
               shadowBlur:20
             },
             data :[{name:"杭州"}],
@@ -564,7 +564,7 @@ require(
           data:[],
           markPoint : {
             symbol: 'circle',
-            symbolSize: 8,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+            symbolSize: 10,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
             itemStyle: {
               normal: {
                 borderColor: '#35f326',
@@ -791,8 +791,8 @@ require(
     var viewdata=[];
     var newname="个人所得税";
     var dataIndex=0;
-    viewdata.push(s2009[dataIndex].value,s2010[dataIndex].value,s2011[dataIndex].value,
-      s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,hh2015[dataIndex].value);
+    viewdata.push(y2009[dataIndex].value,y2010[dataIndex].value,y2011[dataIndex].value,
+      y2012[dataIndex].value,y2013[dataIndex].value,y2014[dataIndex].value,y2015[dataIndex].value);
     option = {
       timeline : {
         x:0,//左侧距离
@@ -803,7 +803,7 @@ require(
         },
         data : [
           '2009','2010', '2011', '2012', '2013','2014',
-          { name:'2015', symbol:'emptyStar6', symbolSize:8 },
+          { name:'2015', symbol:'emptyStar6', symbolSize:8 }
         ],
         autoPlay:true,//自动播放
         label : {
@@ -820,7 +820,7 @@ require(
           title : {
           },
           tooltip : {
-            trigger: 'item',
+            trigger: 'item'
             //formatter: "{a} <br/>{b} : {c} ({d}%)"
           },
           legend: {
@@ -868,7 +868,7 @@ require(
                   }
                 }
               },
-              data:s2009
+              data:y2009
             }
           ]
         },
@@ -877,7 +877,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2010
+              data:y2010
             }
           ]
         },
@@ -886,7 +886,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2011
+              data:y2011
             }
           ]
         },
@@ -895,7 +895,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2012
+              data:y2012
             }
           ]
         },
@@ -904,7 +904,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2013
+              data:y2013
             }
           ]
         },
@@ -913,7 +913,7 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:s2014
+              data:y2014
             }
           ]
         },
@@ -922,12 +922,13 @@ require(
             {
               name:'税收比',
               type:'pie',
-              data:hh2015
+              data:y2015
             }
           ]
-        },
+        }
       ]
     };
+    console.log(y2015);
     right2.setOption(option);
     var myChart2=echarts.init(document.getElementById('rightcavs3'));
     option2 = {
@@ -991,7 +992,7 @@ require(
     right2.on('click', function (param) {
      newname=param.name;
       dataIndex=param.dataIndex;
-     viewdata=[s2009[dataIndex].value,s2010[dataIndex].value,s2011[dataIndex].value,s2012[dataIndex].value,s2013[dataIndex].value,s2014[dataIndex].value,hh2015[dataIndex].value];
+     viewdata=[y2009[dataIndex].value,y2010[dataIndex].value,y2011[dataIndex].value,y2012[dataIndex].value,y2013[dataIndex].value,y2014[dataIndex].value,y2015[dataIndex].value];
       option2 = {
         tooltip : {
           trigger: 'axis'
@@ -1008,7 +1009,7 @@ require(
                 color:"#2669ce",
                 fontSize:12,
                 fontWeight:"normal"
-              },
+              }
             },
             splitLine:{
               show:false
@@ -1030,8 +1031,8 @@ require(
             },
             splitLine:{
               show:false
-            },
-          },
+            }
+          }
         ],
         series : [
           {
