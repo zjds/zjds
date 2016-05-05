@@ -136,14 +136,14 @@ require(
       //取得浙江省地图。。。没法调出二级。。。暂时放弃
     }
     option = {
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      // backgroundColor: 'rgba(255, 255, 255, 0.1)',
       color: [
         'rgba(14, 241, 242, 0.3)',
         'rgba(37, 140, 249, 0.3)'
       ],
       title : {
-        text: '虚构',
-        subtext: '登记注册情况分布',
+        text: '',
+        subtext: '',
         x:'center',
         textStyle : {
           color: '#fff'
@@ -154,7 +154,8 @@ require(
         x:'left',
         data:['企业','个体'],
         textStyle : {
-          color: '#fff'
+          color: '#fff',
+            fontSize:'16'
         },
         selected: {
           '企业' : true,
@@ -221,6 +222,7 @@ require(
           name: '企业',
           type: 'map',
           mapType: 'zj',
+          top:'100',
           itemStyle:{
             normal:{
               borderColor:'rgba(100,149,237,1)',

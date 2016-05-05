@@ -82,6 +82,7 @@ require(
             title: {
             },
             tooltip: {   //提示框组件
+                show:false,
                 trigger: 'axis',  //触发类型
                 padding:7,
                 formatter: function (params, ticket, callback) {  //显示格式化
@@ -98,14 +99,15 @@ require(
                     setTimeout(function (){callback(ticket, res);}, 300);
                     return '计算中...';
                 },
-                //textStyle:{   //文本颜色
-                //    color:"blue"
-                //}
+                textStyle:{   //文本颜色
+                   fontSize:'16'
+                },
                 extraCssText:'width:300px;height:200px'  //无效，不知道为什么
             },
             legend: {
                 textStyle:{
-                    color:"#ffffff"
+                    color:"#ffffff",
+                    fontSize:'16'
                 },
                 data:['地税组织收入','税收收入','非税收入','社保基金收入']
             },
@@ -127,14 +129,14 @@ require(
                 axisLabel:{
                     textStyle:{
                         color:"#2669ce",
-                        fontSize:12,
+                        fontSize:20,
                         fontWeight:"normal"
                     },
                 },
                 splitLine:{
                     show:false
                 },
-                data: ['09','10','11','12','13','14','15','16']
+                data: ['2009','2010','2011','2012','2013','2014','2015','2016']
             },
             yAxis: {
                 type: 'value',
@@ -142,7 +144,7 @@ require(
                 axisLabel:{
                     textStyle:{
                         color:"#2669ce",
-                        fontSize:12,
+                        fontSize:20,
                         fontWeight:"normal"
                     },
                 },
@@ -157,7 +159,8 @@ require(
                     name:'社保基金收入',
                     type:'line',
                     stack: '',
-                    data:sbjjsr
+                    data:sbjjsr,
+                    tooltipShow:false
                 },
                 {
                     name:'社保基金收入',

@@ -1,6 +1,6 @@
 .sssbqkjkBox{
     width: 40rem;
-    height: 40rem;
+    height: 45rem;
     float: right;
 }
 .sssbqkjkBox .drsb{
@@ -42,7 +42,7 @@
     font-size: 1.5rem;
 }
 .sssbqkjkBox .sssb{
-    height: 20rem;
+    height: 28rem;
     width: 90%;
     border: 1px solid #052b80;
     -webkit-border-radius: 4px;
@@ -78,10 +78,15 @@
 .sssbqkjkBox .sssb .mc{
     margin-left: 1rem;
     color: #fff;
+    font-size: 1.6rem;
 }
 .sssbqkjkBox .sssb .sz{
     color: #485eb5;
+    font-size: 1.6rem;
+
 }
 .sssbqkjkBox .sssb .je{
     color: #ffc321;
+    font-size: 1.6rem;
+
 }

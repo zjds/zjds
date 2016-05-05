@@ -14,7 +14,7 @@ body{
     float: right;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcTitle{
-    height: 9.6rem;
+    height: 12rem;
     width: 100%;
     border: 1px solid #052b80;
     -webkit-border-radius: 4px;
@@ -33,15 +33,15 @@ body{
     position: relative;  /*IE背景透明文字不透明*/
 }
 .qsnsrdjzcRightBox .qsnsrdjzcTitle p:first-child{
-    font-size: 1.4rem;
+    font-size: 2.5rem;
     color: #ffffff;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcTitle p:nth-child(2){
-    font-size: 1.9rem;
+    font-size: 3rem;
     color: #ffc321;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent{
-    height: 31rem;
+    height: 28rem;
     width: 100%;
     border: 1px solid #052b80;
     -webkit-border-radius: 4px;
@@ -81,20 +81,21 @@ body{
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li span {
     position: relative;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     line-height: 3rem;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .dq{
     /*margin-left: 3.4rem;*/
-    margin-left: 10%;
+    margin-left: 8%;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .hs{
     /*margin-left: 12.2rem;*/
-    margin-left: 30%;
+    margin-left: 25%;
 }
 .qsnsrdjzcRightBox .qsnsrdjzcContent ul li .bfb{
     /*margin-left: 15.1rem;*/
     float: right;
+    margin-right:5%;
 }
 #img{
     width:41rem;

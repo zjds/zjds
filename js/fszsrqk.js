@@ -7,9 +7,9 @@
 
 var nulldata=[];
 var linedata=[];
-linedata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y),parseFloat(s2015[0].y)*1.2)
+linedata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y),783.68)
 nulldata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y))
-nulldata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(s2015[0].y)*1.2})
+nulldata.push({'color':'rgba(25,146,192, 0.3)','y':783.68});
 var zhudata= [409917, 464082,507123, 466791, 564596, 569835, 571271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata2=[809917, 5464082,407123, 366791, 264596, 469835, 271271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
 var zhudata3= [49917, 46402,50712, 466791, 56496, 56835, 57271,  {'color':'rgba(25,146,192, 0.3)','y':671271}];
@@ -22,7 +22,7 @@ function choose(n){
   for(i=0;i<s2015.length;i++){
    if(s2015[i].name==n){
      viewdata.push(parseFloat(s2009[i].value),parseFloat(s2010[i].value),parseFloat(s2011[i].value),parseFloat(s2012[i].value),parseFloat(s2013[i].value),parseFloat(s2014[i].value),parseFloat(hh2015[i].value))
-     viewdata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(hh2015[i].value)*1.2})
+     viewdata.push({'color':'rgba(25,146,192, 0.3)','y':parseFloat(hh2015[i].value*1.2,2)});
     return viewdata
    }
   }
@@ -112,7 +112,8 @@ $(function () {
     xAxis:{
       labels: {
         style: {
-          color: '#fff'
+          color: '#fff',
+          fontSize:'16'
         }
       },
       gridLineColor: '#E4393c',
@@ -126,7 +127,8 @@ $(function () {
       gridLineDashStyle:'longdash',
       labels: {
         style: {
-          color: '#fff'
+          color: '#fff',
+          fontSize:'16'
         }
       },
       title:{
@@ -248,7 +250,8 @@ $(function () {
           enabled: true,
           format: '',
           style: {
-            color: '#fff'
+            color: '#fff',
+            fontSize:'16'
           }
         },
         events: {

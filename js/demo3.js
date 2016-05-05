@@ -35,7 +35,8 @@ $(function () {
     xAxis:{
       labels: {
         style: {
-          color: '#fff'
+          color: '#fff',
+          fontSize:'16'
         }
       },
       gridLineColor: '#E4393c',
@@ -49,7 +50,8 @@ $(function () {
       gridLineDashStyle:'longdash',
       labels: {
         style: {
-          color: '#fff'
+          color: '#fff',
+          fontSize:'16'
         }
       },
       title:{
@@ -68,7 +70,8 @@ $(function () {
     legend:{
       //data:['注册登记数','注册登','注']
       itemStyle:{
-        color:'#fff'
+        color:'#fff',
+        fontSize:'16'
       }
 
     },

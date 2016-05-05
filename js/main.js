@@ -204,6 +204,7 @@ require(
       title: {
       },
       tooltip: {
+        show:false,
         trigger: 'axis',
         padding:3,
         formatter: function (params, ticket, callback) {
