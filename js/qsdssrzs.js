@@ -14,6 +14,20 @@ require(
         'echarts/chart/map'
     ],
     function (echarts){
+        var mapData =[
+            {name:'杭州市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'嘉兴市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'湖州市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'宁波市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'丽水市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'绍兴市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'温州市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'金华市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'舟山市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'台州市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name:'衢州市',value:617189729892.61,sssr:1111,fsssr:2222,sbjjsr:3333},
+            {name : '省局直属局', value : 3707}
+        ];
         var myChart= echarts.init(document.getElementById('mapcavs'));
 
         require('echarts/util/mapData/params').params.zj= {
@@ -41,12 +55,18 @@ require(
             },
             tooltip : {
                 trigger: 'item',
-                formatter: '{b}'
+                formatter: function (params) {
+                    var res=params.data.name+'<hr style="margin: 2% 0"/>地税组织收入：<span style="color: yellow">'+params.data.value+
+                        '<br/></span>税收收入:<span style="color: yellow">'+params.data.sssr+'</span>'+
+                        '<br/></span>非税收收入:<span style="color: yellow">'+params.data.fsssr+'</span>'+
+                        '<br/></span>社保基金收入:<span style="color: yellow">'+params.data.sbjjsr+'</span>'
+                    return res;
+                }
             },
             legend: {
                 orient: 'vertical',
                 x:'left',
-                selectedMode:'single',
+                // selectedMode:'single',
                 data:['', ''],
                 textStyle : {
                     color: '#fff'
@@ -67,7 +87,7 @@ require(
             },
             series : [
                 {
-                    name: '浙江数据',
+                    name: '地税组织收入',
                     type: 'map',
                     roam: false,
                     hoverable: true,
@@ -90,11 +110,10 @@ require(
 
                         }
                     },
-                    data:[
-                        
-                    ]
+                    data:mapData
                 }
             ]
         };
+        // console.log(mapData);
         myChart.setOption(option);
     });
