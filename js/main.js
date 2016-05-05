@@ -204,17 +204,20 @@ require(
       title: {
       },
       tooltip: {
-        show:false,
+        // show:false,
         trigger: 'axis',
         padding:3,
         formatter: function (params, ticket, callback) {
           params=params.sort(by("seriesIndex"));//排序
           var res = params[0].name+'年<br/>';//抬头
           for(i=0;i<params.length;i++){
-            if((params[i].value!='-')&&(params[i].name!='15')){
-            res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
-          }else if((params[i].name=='15')&&(i%2!=0)){
-              res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+          //   if((params[i].value!='-')&&(params[i].name!='15')){
+          //   res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+          // }else if((params[i].name=='15')&&(i%2!=0)){
+          //     res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+          //   }
+            if(i%2==0){
+              res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//修改,只显示虚线数据
             }
           }
 

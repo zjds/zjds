@@ -82,17 +82,21 @@ require(
             title: {
             },
             tooltip: {   //提示框组件
-                show:false,
+                // show:false,
                 trigger: 'axis',  //触发类型
                 padding:7,
                 formatter: function (params, ticket, callback) {  //显示格式化
                     params=params.sort(by("seriesIndex"));//排序
                     var res = params[0].name+'年<br/>';//抬头
+                    // console.log(params,'1');
                     for(i=0;i<params.length;i++){
-                        if((params[i].value!='-')&&(params[i].name!='15')){
-                            res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
-                        }else if((params[i].name=='15')&&(i%2!=0)){
-                            res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+                        // if((params[i].value!='-')&&(params[i].name!='15')){
+                        //     res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+                        // }else if((params[i].name=='15')&&(i%2!=0)){
+                        //     res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//内容
+                        // }
+                        if(i%2==0){
+                            res+=params[i].seriesName+':'+params[i].value+'亿元'+'<br/>';//修改,只显示虚线数据
                         }
                     }
 
@@ -160,7 +164,10 @@ require(
                     type:'line',
                     stack: '',
                     data:sbjjsr,
-                    tooltipShow:false
+                    // tooltipShow:false,
+                    tooltip:{
+                        show:false
+                    }
                 },
                 {
                     name:'社保基金收入',
@@ -198,6 +205,12 @@ require(
                     name:'税收收入',
                     type:'line',
                     stack: '',
+                    data:sssr
+                },
+                {
+                    name:'税收收入',
+                    type:'line',
+                    stack: '',
                     itemStyle:
                     {normal: {
                         lineStyle: {
@@ -207,13 +220,6 @@ require(
                     },
                     data:[sssr[0],sssr[1],sssr[2],sssr[3],sssr[4],sssr[5],sssr[sssr.length-2],(sssr[sssr.length-2].value*1.2).toFixed(2)]
                 },
-                {
-                    name:'税收收入',
-                    type:'line',
-                    stack: '',
-                    data:sssr
-                },
-
                 {
                     name:'地税组织收入',
                     type:'line',
