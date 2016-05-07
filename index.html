@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,63 +10,179 @@
     <script src="js/gg.js"></script>
     <!-- gg公共-->
     <script src="js/angular.min.js"></script>
-    <!--<script src="js/angular-ui-router.min.js"></script>-->
 </head>
+<!--<script src="js/angular-ui-router.min.js"></script>-->
+
 <body ng-app="zjdx">
+<div class="home_bg">
     <div id="header">
-        <img src="imges/logo.png" style="margin-top: 20px;margin-left: 20px" alt=""/>
-        <div class="right"><ul><li id="moreproject">更多功能 <div id="zzc">
-            <ul>
-                <li><a href="views/qsnsrdjzc.html">注册登记表</a></li>
-                <li><a href="views/qknddb.html">纳税人年度对比</a></li>
-                <li><a href="views/dssrnddb.html">地税收入年度对比</a></li>
-                <li><a href="views/fszsrqk.html">分税税种收入情况</a></li>
-                <li><a href="views/sssbqkjk.html">实时申报情况监控</a></li>
-                <li><a href="views/demo2.html">房产税（模板）</a></li>
-                <li><a href="views/qsdssrzs.html">全省地税收入整体展示</a></li>
-            </ul>
-        </div></li><li>全屏展示</li></ul></div>
+        <div class="left">
+            <img src="imges/hanber@2.png" class="more"/>
+            <img src="imges/logo.png"/>
+        </div>
+        <div class="right">
+            <span>2016年3月15日 15:30:56</span>
+            <span><img src="imges/full@2.png" class="fullImg"/>全屏显示</span>
+        </div>
+        <div class="more_info">
+            <img src="imges/close@2.png"/>
+            <div class="more_detail">
+                <dl>
+                    <dt><a href="./views/qsnsrdjzc.html"><img src="imges/more.png"/></a></dt>
+                    <dd>全省纳税人登记注册情况</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/qknddb.html"><img src="imges/more.png"/></a></dt>
+                    <dd>纳税人登记注册情况年度对比</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/dssrnddb.html"><img src="imges/more.png"/></a></dt>
+                    <dd>地税收入年度对比</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/fszsrqk.html"><img src="imges/more.png"/></a></dt>
+                    <dd>分税种收入情况</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/sssbqkjk.html"><img src="imges/more.png"/></a></dt>
+                    <dd>实时申报情况监控</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/demo2.html"><img src="imges/more.png"/></a></dt>
+                    <dd>房产交易情况展示</dd>
+                </dl>
+                <dl>
+                    <dt><a href="./views/qsdssrzs.html"><img src="imges/more.png"/></a></dt>
+                    <dd>全省地税收入整体展示</dd>
+                </dl>
+                <!--<dl>-->
+                    <!--<dt><img src="imges/more.png"/></dt>-->
+                    <!--<dd>全省纳税人登记注册情况</dd>-->
+                <!--</dl>-->
+                <!--<dl>-->
+                    <!--<dt><img src="imges/more.png"/></dt>-->
+                    <!--<dd>全省纳税人登记注册情况</dd>-->
+                <!--</dl>-->
+                <!--<dl>-->
+                    <!--<dt><img src="imges/more.png"/></dt>-->
+                    <!--<dd>全省纳税人登记注册情况</dd>-->
+                <!--</dl>-->
+                <!--<dl>-->
+                    <!--<dt><img src="imges/more.png"/></dt>-->
+                    <!--<dd>全省纳税人登记注册情况</dd>-->
+                <!--</dl>-->
+                <!--<dl>-->
+                    <!--<dt><img src="imges/more.png"/></dt>-->
+                    <!--<dd>全省纳税人登记注册情况</dd>-->
+                <!--</dl>-->
+            </div>
+        </div>
+
+        <!--<div class="right"><ul><li id="moreproject">更多功能 <div id="zzc">-->
+        <!--<ul>-->
+        <!--<li><a href="views/qsnsrdjzc.html">注册登记表</a></li>-->
+        <!--<li><a href="views/qknddb.html">纳税人年度对比</a></li>-->
+        <!--<li><a href="views/dssrnddb.html">地税收入年度对比</a></li>-->
+        <!--<li><a href="views/fszsrqk.html">分税税种收入情况</a></li>-->
+        <!--<li><a href="views/sssbqkjk.html">实时申报情况监控</a></li>-->
+        <!--<li><a href="views/demo2.html">房产税（模板）</a></li>-->
+        <!--</ul>-->
+        <!--</div></li><li>全屏展示</li></ul></div>-->
     </div>
     <div id="section" ng-controller="swdxCtrl">
         <div id="leftdiv">
-            <ul>x
-                <li><img src="imges/dengji.png"/><span>税务登记户数:<span>&nbsp;<span class="int">+{{int1}}</span></span><br/><span>{{djhs}}</span>户</span></li>
-                <li><img src="imges/dishui.png"/><span>地税部门组织收入：<span>&nbsp;<span class="int">+{{int2}}</span></span><br/><span>{{bmsr}}</span>万元</span></li>
-                <li><img src="imges/shuiwu.png"/><span>税收：<span>&nbsp;<span class="int">+{{int3}}</span></span><br/><span>{{shuishou}}</span>万元</span></li>
-                <li><img src="imges/feishui.png"/><span>非税收入：<span>&nbsp;<span class="int">+{{int4}}</span></span><br/><span>{{feiss}}</span>万元</span></li>
+            <div class="fresh">
+                <img src="imges/resh@2.png"/>
+            </div>
+            <ul>
+                <li>
+                    <img src="imges/dengji.png"/>
+
+                    <div class="info">
+                        <p>税务登记户数：<span><span class="int">+{{int1}}</span></span></p>
+
+                        <p><span>{{djhs}}</span>户</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/dishui.png"/>
+
+                    <div class="info">
+                        <p>地税部门组织收入：<span><span class="int">+{{int2}}</span></span></p>
+
+                        <p><span>{{bmsr}}</span>万元</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/shuiwu.png"/>
+
+                    <div class="info">
+                        <p>税收：<span><span class="int">+{{int3}}</span></span></p>
+
+                        <p><span>{{shuishou}}</span>万元</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/feishui.png"/>
+
+                    <div class="info">
+                        <p>非税收入：<span><span class="int">+{{int4}}</span></span></p>
+
+                        <p><span>{{feiss}}</span>万元</p>
+                    </div>
+                </li>
             </ul>
-            <div  id="linecavs"></div>
+            <div id="linecavs"></div>
         </div>
-        <div id="centerdiv">
-            <div id="mapcavs"></div>
-            <div class="bottomview">
-                <ul id="frist">
-                    <li><i></i>&nbsp;{{frist.name}};<span style="color: yellow;font-size: 16px">{{frist.value}}</span>元<span class="var1">{{frist.updown}}{{frist.varnum==0?"":frist.varnum}}</span></li>
-                    <li><b></b>&nbsp;{{second.name}};<span style="color: yellow;font-size: 16px">{{second.value}}</span>元<span class="var2">{{second.updown}}{{second.varnum==0?"":second.varnum}}</span></li>
-                    <li><s></s>&nbsp;{{third.name}};<span style="color: yellow;font-size: 16px">{{third.value}}</span>元<span class="var3">{{third.updown}}{{third.varnum==0?"":third.varnum}}</span></li>
-                </ul>
-                <ul>
-                    <li>{{ten1.name}}<span style="color: yellow">{{ten1.value}}</span>元 </li>
-                    <li>{{ten2.name}}<span style="color: yellow">{{ten2.value}}</span>元 </li>
-                    <li>{{ten3.name}}<span style="color: yellow">{{ten3.value}}</span>元</li>
-                    <li>{{ten4.name}}<span style="color: yellow">{{ten4.value}}</span>元 </li>
-                 </ul>
-                <ul>
-                    <li>{{ten5.name}}<span style="color: yellow">{{ten5.value}}</span>元 </li>
-                    <li>{{ten6.name }}<span style="color: yellow">{{ten6.value}}</span>元 </li>
-                    <li>{{ten7.name}}<span style="color: yellow">{{ten7.value}}</span>元 </li>
-                    <li>{{ten8.name}}<span style="color: yellow">{{ten8.value}}</span>元 </li>
-                </ul>
+        <div id="centerdiv1">
+            <div id="centerdiv">
+                <div id="mapcavs"></div>
+                <div class="bottomview">
+
+                    <ul id="first">
+                        <li><img src="imges/no1.png"/>{{frist.name}}<span class="value">{{frist.value}}</span>元<span class="var1">{{frist.updown}}{{frist.varnum==0?"":frist.varnum}}</span>
+                        </li>
+                        <li class="second"><img src="imges/no2.png"/>{{second.name}}<span class="value">{{second.value}}</span>元<span class="var2">{{second.updown}}{{second.varnum==0?"":second.varnum}}</span>
+                        </li>
+                        <li><img src="imges/no3.png"/>{{third.name}}<span class="value">{{third.value}}</span>元<span class="var3">{{third.updown}}{{third.varnum==0?"":third.varnum}}</span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>{{ten1.name}}<span class="value">{{ten1.value}}</span>元</li>
+                        <li>{{ten2.name}}<span class="value">{{ten2.value}}</span>元</li>
+                        <li>{{ten3.name}}<span class="value">{{ten3.value}}</span>元</li>
+                        <li>{{ten4.name}}<span class="value">{{ten4.value}}</span>元</li>
+                    </ul>
+                    <ul>
+                        <li>{{ten5.name}}<span class="value">{{ten5.value}}</span>元</li>
+                        <li>{{ten6.name }}<span class="value">{{ten6.value}}</span>元</li>
+                        <li>{{ten7.name}}<span class="value">{{ten7.value}}</span>元</li>
+                        <li>{{ten8.name}}<span class="value">{{ten8.value}}</span>元</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="rightdiv">
             <h4>登记注册情况年度对比</h4>
+
             <div id="rightcavs1"></div>
             <h4 id="otherh4">分税种收入情况</h4>
-            <div  id="rightcavs2"></div>
+
+            <div id="rightcavs2"></div>
             <div id="rightcavs3"></div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+//    侧边栏
+    $("#header> .left .more").click(function(){
+        $("#header>.more_info").addClass("on");
+    })
+    $("#header>.more_info>img").click(function(){
+        $("#header>.more_info").removeClass("on");
+    })
+</script>
 </body>
 </html>
