@@ -87,33 +87,33 @@ require(
 
             }
             //取得浙江省地图。。。没法调出二级。。。暂时放弃
-        };
-        var effect = {//线条特效配置
+        }
+        var effect = {//线条
             show: true,
             scaleSize: require('zrender/tool/env').canvasSupported ? 1 : 2,
             loop:false,
             period: 4.2,             // 运动周期，无单位，值越大越慢
-            color: '#ecfa0b',
+            color: '#fffc27',
             shadowColor: 'rgba(220,220,220,0.1)',
             opacity: 0.2,
             shadowBlur :0.5
         };//这里设置炫光特效颜色大小
         function itemStyle(idx) {
-        return {
-            normal: {
-                color:'#fff',
-                borderWidth:4,
-                borderColor:['rgba(30,144,255,1)','rgba(34,239,39,0)'][idx],
-                lineStyle: {
-                    //shadowColor : ['rgba(30,144,255,1)','rgba(30,144,255,0)'][idx], //默认透明
-                    //shadowBlur: 10,
-                    //shadowOffsetX: 0,
-                    //shadowOffsetY: 0,
-                    type: 'solid'
+            return {
+                normal: {
+                    color:'#fff',
+                    borderWidth:4,
+                    borderColor:['rgba(30,144,255,1)','rgba(34,239,39,0)'][idx],
+                    lineStyle: {
+                        //shadowColor : ['rgba(30,144,255,1)','rgba(30,144,255,0)'][idx], //默认透明
+                        //shadowBlur: 10,
+                        //shadowOffsetX: 0,
+                        //shadowOffsetY: 0,
+                        type: 'solid'
+                    }
                 }
             }
-        }
-    };//这里设置线条颜色大小
+        };//这里设置线条颜色大小
         option = {
             color: ['rgba(30,144,255,0)','lime'],
             title : {
@@ -173,7 +173,7 @@ require(
                             label:{textStyle:{color:'#2d2925'},show:false},
                             borderColor:'rgba(200,249,137,0.1)',
                             borderWidth:0.5,
-                            color:'#fa8201'
+                            color:'#023760'
 
                         }
                     },
@@ -183,14 +183,14 @@ require(
                         symbolSize:2,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
                         itemStyle: {
                             normal: {
-                                borderColor: '#ff0000',
+                                borderColor: '#ffbb17',
                                 borderWidth: 5,            // 标注边线线宽，单位px，默认为1
                                 label: {
                                     show: false
                                 }
                             },
                             emphasis: {
-                                borderColor: '#1e90ff',
+                                borderColor: '#ffbb17',
                                 borderWidth: 5,
                                 label: {
                                     show: false
@@ -202,12 +202,12 @@ require(
                             type: 'scale',
                             loop: true,
                             period: 20,
-                            scaleSize:12,
+                            scaleSize:20,
                             shadowBlur:20
                         },
                         data :[{name:"杭州"}],
                         geoCoord: geoCoordflr
-                    }
+                    },
                 },
                 {
                     name: '浙江数据',
@@ -226,17 +226,17 @@ require(
                     data:[],
                     markPoint : {
                         symbol: 'circle',
-                        symbolSize: 8,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+                        symbolSize: 10,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
                         itemStyle: {
                             normal: {
-                                borderColor: '#35f326',
+                                borderColor: '#17d6ff',
                                 borderWidth: 1,            // 标注边线线宽，单位px，默认为1
                                 label: {
                                     show: false
                                 }
                             },
                             emphasis: {
-                                borderColor: '#1e90ff',
+                                borderColor: '#17d6ff',
                                 borderWidth: 5,
                                 label: {
                                     show: false
@@ -299,13 +299,47 @@ require(
         for(var key in geoCoordflr){
             arrayObj.push(key);//将城市结果集所有key（城市名）压入arrayobj
         }
+        var XMLHttpReq;
+        function createXMLHttpRequest() {
+            try {
+                XMLHttpReq = new ActiveXObject("Msxml2.XMLHTTP");//IE高版本创建XMLHTTP
+            }
+            catch(E) {
+                try {
+                    XMLHttpReq = new ActiveXObject("Microsoft.XMLHTTP");//IE低版本创建XMLHTTP
+                }
+                catch(E) {
+                    XMLHttpReq = new XMLHttpRequest();//兼容非IE浏览器，直接创建XMLHTTP对象
+                }
+            }
+
+        }
+        function sendAjaxRequest(url) {
+            createXMLHttpRequest();                                //创建XMLHttpRequest对象
+            XMLHttpReq.open("post", url, true);
+            XMLHttpReq.onreadystatechange = processResponse; //指定响应函数
+            XMLHttpReq.send(null);
+        }
+        //回调函数
+        function processResponse() {
+            if (XMLHttpReq.readyState == 4) {
+                if (XMLHttpReq.status == 200) {
+                    var text = XMLHttpReq.responseText;
+                    console.log(text);
+                    /**
+                     *实现回调
+                     */
+                }
+            }
+
+        }
         timeTicket = setInterval(function (){
             var mydata=[];
             var aadata=[];//保存处理完成的结果集
             var str=',{data:[';//保存线性数据
             var strpont=',{data:[';//保存点状数据
             var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删
-            for(i=0, k={},l={};i<number;i++){
+            for(i=0, k={},l={};i<number;i++){  //随机产生point
                 var ronndnum=Math.floor(Math.random()*arrayObj.length);
                 mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
                 aadata.push(mydata);

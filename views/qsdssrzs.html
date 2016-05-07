@@ -10,16 +10,34 @@
     <script src="../js/echarts.js"></script>
     <script src="../js/gg.js"></script>
     <script src="../js/angular.min.js"></script>
-    <script src="../js/qsdssrzs.js"></script>
 </head>
-<body>
-    <div class="box">
+<body ng-app="qsdssrzs">
+    <div class="box" ng-controller="qsdssrzsCtrl">
         <div class="topBox">
             <p class="title">全省地税收入整体展示</p>
             <!--<img src="../imges/titleBackground.png">-->
         </div>
         <div class="leftBox" id="mapcavs" style="height: 500px"></div>
-        <div class="rightBox"></div>
+        <div class="rightBox">
+            <ul>
+                <li>
+                    <p>地税组织收入</p>
+                    <p></p>
+                </li>
+                <li>
+                    <p>税收收入</p>
+                    <p></p>
+                </li>
+                <li>
+                    <p>非税收收入</p>
+                    <p></p>
+                </li>
+                <li>
+                    <p>社保基金收入</p>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
         <div class="footBox">
             <ul>
                 <li><a href="demo2.html"><img src="../imges/left.png"></a></li>
@@ -28,5 +46,6 @@
             </ul>
         </div>
     </div>
+    <script src="../js/qsdssrzs.js"></script>
 </body>
 </html>

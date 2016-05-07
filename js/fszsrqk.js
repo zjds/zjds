@@ -197,6 +197,8 @@ $(function () {
       type: 'pie',
       renderTo: 'cavs1',
       backgroundColor: 'rgba(7,36,106,0.0)',
+      slicedOffset:150,
+      // size:500,
       options3d: {
         enabled: true,
         alpha: 45,
@@ -246,6 +248,7 @@ $(function () {
         allowPointSelect: true,
         cursor: 'pointer',
         depth: 35,
+        slicedOffset:40,//改变饼图突出多少
         dataLabels: {
           enabled: true,
           format: '',
