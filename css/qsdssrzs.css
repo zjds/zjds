@@ -1,0 +1,18 @@
+.qsdssrzsBox ul{
+    width: 30rem;
+    height: 41rem;
+    float: right;
+}
+.qsdssrzsBox ul li{
+    margin-top: 2rem;
+    height: 7rem;
+    border-bottom: 1px solid #2250c0;
+}
+.qsdssrzsBox ul li p:first-child{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.qsdssrzsBox ul li p:nth-child(2){
+    font-size: 2.5rem;
+    color: #ffc321;
+}
