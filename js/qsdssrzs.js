@@ -192,7 +192,7 @@ app.controller("qsdssrzsCtrl",['$scope',function ($scope) {
                 },
                 series : [
                     {
-                        name: '地税组织收入',
+                        name: '浙江',
                         type: 'map',
                         roam: false,
                         hoverable: true,
@@ -222,9 +222,11 @@ app.controller("qsdssrzsCtrl",['$scope',function ($scope) {
             };
             // console.log(mapData);
             myChart.setOption(option1);
+
             //点击浙江地图地市,调出地市地图
             myChart.on('click', function(param){
-                console.log(param);
+                // console.log(param);
+                // console.log('2');
                 var jsonName = param.name;
                 option = {
                     // color: ['rgba(30,144,255,0)','line'],
@@ -272,7 +274,7 @@ app.controller("qsdssrzsCtrl",['$scope',function ($scope) {
                     },
                     series : [
                         {
-                            name: '地税组织收入',
+                            name: jsonName,
                             type: 'map',
                             roam: false,
                             hoverable: true,
@@ -301,15 +303,20 @@ app.controller("qsdssrzsCtrl",['$scope',function ($scope) {
                     ]
                 };
                 myChart.setOption(option);
-                // for (i=0;i<cityData.length;i++){
-                //     if(jsonName==cityData[i]){
-                //         $("*").click(function (event) {
-                //             myChart.setOption(option1);
-                //             event.stopPropagation(); //阻止事件冒泡
-                //         });
-                //     }
-                // }
+                // param.event.stopPropagation(); //阻止事件冒泡
             });
+            // console.log(myChart._option.series[0].name);
+
+            var body = document.body;
+            var backZj = function (event) {
+                if(myChart._option.series[0].name!="浙江"){
+                    myChart.setOption(option1);
+                    // event.stopPropagation(); //阻止事件冒泡
+                    // console.log('1');
+                    // alert(event.eventPhase);//查看事件处于什么阶段
+                }
+            }
+            body.addEventListener("click",backZj,false);
         });
 
 }])

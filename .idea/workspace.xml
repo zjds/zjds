@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c396687c-d50f-445a-bdbe-6c40dcd905fe" name="Default" comment="修改饼图数据,修改地图光圈大小">
+    <list default="true" id="c396687c-d50f-445a-bdbe-6c40dcd905fe" name="Default" comment="更新代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fszsrqk.js" afterPath="$PROJECT_DIR$/js/fszsrqk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/qsdssrzs.js" afterPath="$PROJECT_DIR$/js/qsdssrzs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/sssbqkjk.js" afterPath="$PROJECT_DIR$/js/sssbqkjk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demo2.html" afterPath="$PROJECT_DIR$/views/demo2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demo3.html" afterPath="$PROJECT_DIR$/views/demo3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/qknddb.html" afterPath="$PROJECT_DIR$/views/qknddb.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/qsdssrzs.html" afterPath="$PROJECT_DIR$/views/qsdssrzs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/qsnsrdjzc.html" afterPath="$PROJECT_DIR$/views/qsnsrdjzc.html" />
     </list>
     <ignored path="zjds.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +19,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -33,77 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" column="17" selection-start-line="18" selection-start-column="8" selection-end-line="27" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/demo2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sssbqkjk.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/sssbqkjk.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qsnsrdjzc.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/qsnsrdjzc.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qsnsrdj.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/qsnsrdj.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2736">
-              <caret line="144" column="15" selection-start-line="144" selection-start-column="15" selection-end-line="144" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/demo2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qsnsrdjzc.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/qsnsrdjzc.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="502">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -112,11 +40,70 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2109">
+            <state relative-caret-position="231">
               <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qsdssrzs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/qsdssrzs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="232" column="29" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
               <folding>
-                <marker date="1462581018000" expanded="true" signature="160:4148" placeholder="{...}" />
+                <marker date="1462608478000" expanded="true" signature="7669:7681" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="7704:7717" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="7799:7812" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="7904:7917" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="8011:8024" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="11139:11151" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="11174:11187" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="11273:11286" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="11382:11395" placeholder="..." />
+                <marker date="1462608478000" expanded="true" signature="11493:11506" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/src/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="173" column="21" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qsdssrzs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/qsdssrzs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publicStyle.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/publicStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qsdssrzs.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/qsdssrzs.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,7 +141,6 @@
         <option value="$PROJECT_DIR$/zhejiangtext.json" />
         <option value="$PROJECT_DIR$/zhejiangv1.json" />
         <option value="$PROJECT_DIR$/js/zrender/dssrnddb.js" />
-        <option value="$PROJECT_DIR$/css/publicStyle.css" />
         <option value="$PROJECT_DIR$/views/fdcjyqkzs.html" />
         <option value="$PROJECT_DIR$/views/dssrnddb.html" />
         <option value="$PROJECT_DIR$/css/qknddb.css" />
@@ -163,10 +149,8 @@
         <option value="$PROJECT_DIR$/views/test.html" />
         <option value="$PROJECT_DIR$/js/gg.js" />
         <option value="$PROJECT_DIR$/views/demo1.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/js/sssbqkjk.js" />
-        <option value="$PROJECT_DIR$/js/qsdssrzs.js" />
         <option value="$PROJECT_DIR$/js/demo2.js" />
         <option value="$PROJECT_DIR$/views/qknddb.html" />
         <option value="$PROJECT_DIR$/js/demo3.js" />
@@ -180,6 +164,11 @@
         <option value="$PROJECT_DIR$/js/qsnsrdj.js" />
         <option value="$PROJECT_DIR$/views/demo2.html" />
         <option value="$PROJECT_DIR$/views/sssbqkjk.html" />
+        <option value="$PROJECT_DIR$/css/publicStyle.css" />
+        <option value="$PROJECT_DIR$/css/qsdssrzs.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/views/qsdssrzs.html" />
+        <option value="$PROJECT_DIR$/js/qsdssrzs.js" />
       </list>
     </option>
   </component>
@@ -189,6 +178,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="2" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="796" />
@@ -200,7 +190,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -246,6 +236,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zjds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zjds-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -260,7 +264,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zjds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zjds-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,7 +435,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1460075247173</updated>
-      <workItem from="1462585873168" duration="85000" />
+      <workItem from="1462585873168" duration="9048000" />
     </task>
     <task id="LOCAL-00001" summary="修改饼图数据,修改地图光圈大小">
       <created>1462361625073</created>
@@ -414,14 +444,28 @@
       <option name="project" value="LOCAL" />
       <updated>1462361625073</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新代码">
+      <created>1462585978777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1462585978777</updated>
+    </task>
+    <task id="LOCAL-00003" summary="更新代码">
+      <created>1462591774080</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1462591774080</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8412000" />
+    <option name="totallyTimeSpent" value="17375000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="796" extended-state="0" />
+    <frame x="2" y="23" width="1440" height="796" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20845272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -477,7 +521,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改饼图数据,修改地图光圈大小" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改饼图数据,修改地图光圈大小" />
+    <MESSAGE value="更新代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -492,27 +537,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xml/test.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="197" column="87" selection-start-line="197" selection-start-column="87" selection-end-line="197" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/test.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="197" column="87" selection-start-line="197" selection-start-column="87" selection-end-line="197" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/ewqe.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xml/ksa.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -594,6 +618,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -681,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/publicStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhejiangv1.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -706,6 +724,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -713,6 +734,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,13 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/qsdssrzs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -756,13 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="171" column="59" selection-start-line="171" selection-start-column="59" selection-end-line="171" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="17" selection-start-line="18" selection-start-column="8" selection-end-line="27" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -793,6 +801,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -803,35 +812,6 @@
           <folding>
             <element signature="e#0#82#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2109">
-          <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
-          <folding>
-            <marker date="1462581018000" expanded="true" signature="160:4148" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/qsnsrdjzc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/qsnsrdj.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2736">
-          <caret line="144" column="15" selection-start-line="144" selection-start-column="15" selection-end-line="144" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,14 +831,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/qsnsrdj.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="144" column="15" selection-start-line="144" selection-start-column="15" selection-end-line="144" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/sssbqkjk.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="361">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/qsnsrdjzc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/publicStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/qsdssrzs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="173" column="21" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/qsdssrzs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/qsdssrzs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="232" column="29" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
+          <folding>
+            <marker date="1462608478000" expanded="true" signature="7669:7681" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="7704:7717" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="7799:7812" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="7904:7917" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="8011:8024" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="11139:11151" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="11174:11187" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="11273:11286" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="11382:11395" placeholder="..." />
+            <marker date="1462608478000" expanded="true" signature="11493:11506" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
