@@ -79,10 +79,29 @@ ul li{
     background:rgba(0,18,49,0.8);
     z-index:1000;
     overflow:hidden;
-    transition:all 1s linear;
+    transform: translateX(-18.5rem);/*left比较耗性能,造成卡顿*/
+    transition:transform 1s linear;
+
 }
+/*@keyframes yy*/
+/*{*/
+    /*from {left:0px;}*/
+    /*to {left:200px;}*/
+/*}*/
+
+/*@-webkit-keyframes yy !*Safari and Chrome*!*/
+/*{*/
+    /*from {left:0px;}*/
+    /*to {left:200px;}*/
+/*}*/
 #header>.on{
-    left:0;
+    /*left:0;  !*left比较耗性能,造成卡顿*!*/
+    /*-moz-animation:yy 2s linear; !* Firefox *!*/
+    /*-webkit-animation:yy 2s linear; !* Safari and Chrome *!*/
+    /*-o-animation:yy 2s linear; !* Opera *!*/
+    /*-webkit-animation-timing-function:linear;*/
+    transform: translateX(18.5rem);
+    transition:transform 1s linear;
 }
 #header>.more_info>img{
     width: 1.2rem;
@@ -266,10 +285,10 @@ ul li{
 }
 
 #rightcavs1{
-    width:120% ;
+    width:130% ;
     height:11rem;
     position: relative;
-    left: -1.5rem;
+    left: -1.8rem;
 }
 #rightdiv>h4{
     width:80%;
@@ -282,8 +301,8 @@ ul li{
     border-radius: 0.75rem;
 }
 #rightcavs2{
-    width:120% ;
-    height:10rem;
+    width:100% ;
+    height:12rem;
     position: relative;
     left: 0;
 }

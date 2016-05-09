@@ -317,6 +317,7 @@ app.controller("qsdssrzsCtrl",['$scope',function ($scope) {
                 }
             }
             body.addEventListener("click",backZj,false);
-        });
+        }
+    );
 
 }])

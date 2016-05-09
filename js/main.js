@@ -224,11 +224,15 @@ app.controller("swdxCtrl",function($scope){
             }
           },
           legend: {
+            padding:[0,150],
             textStyle:{
               color:"#ffffff"
             },
-            data:['地税组织收入','税收收入','非税收入','社保基金收入']
+            // color:['#00448a','#0580b9','#28c6b9','#84e6f1','#dddddd'],
+            data:['地税组织收入','税收收入','社保基金收入','非税收入'],
+            left:'left'
           },
+          color:['#0ecdf6','#127cff','#0edb26','#ffb21c'],
           grid: {
             left: "left",
             right: '0%',
@@ -244,12 +248,13 @@ app.controller("swdxCtrl",function($scope){
           xAxis: {
             type: 'category',
             boundaryGap: false,
+            right:'40%',
             axisLabel:{
               textStyle:{
                 color:"#2669ce",
                 fontSize:12,
                 fontWeight:"normal"
-              },
+              }
             },
             splitLine:{
               show:false
@@ -259,55 +264,74 @@ app.controller("swdxCtrl",function($scope){
           yAxis: {
             type: 'value',
             name:'亿元',
+            padding:'0',
             axisLabel:{
               textStyle:{
                 color:"#2669ce",
                 fontSize:12,
                 fontWeight:"normal"
-              },
+              }
             },
             splitLine:{
               lineStyle:{
                 color:'#073b83'
               }
-            },
+            }
           },
           series: [
             {
               name:'社保基金收入',
               type:'line',
               stack: '',
-              data:sbjjsr
+              data:sbjjsr,
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    color:'#0edb26'
+                  }
+                }
+              },
+              smooth:true
             },
             {
               name:'社保基金收入',
               type:'line',
               stack: '',
-              itemStyle:
-              {normal: {
-                lineStyle: {
-                  type: 'dotted'
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    type: 'dotted',
+                    color:'#0edb26'
+                  }
                 }
-              }
               },
+              // symbol:'image://imges/66.pic.jpg',
               data:[sbjjsr[0],sbjjsr[1],sbjjsr[2],sbjjsr[3],sbjjsr[4],sbjjsr[5],sbjjsr[sbjjsr.length-2],(sbjjsr[sbjjsr.length-2].value*1.2).toFixed(2)]
             },
             {
               name:'非税收入',
               type:'line',
               stack: '',
-              data:fssr
+              data:fssr,
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    color:'#ffb21c'
+                  }
+                }
+              }
             },
             {
               name:'非税收入',
               type:'line',
               stack: '',
-              itemStyle:
-              {normal: {
-                lineStyle: {
-                  type: 'dotted'
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    type: 'dotted',
+                    color:'#ffb21c'
+                  }
                 }
-              }
               },
               data:[fssr[0],fssr[1],fssr[2],fssr[3],fssr[4],fssr[5],fssr[fssr.length-2],(fssr[fssr.length-2].value*1.2).toFixed(2)]
             },
@@ -315,37 +339,51 @@ app.controller("swdxCtrl",function($scope){
               name:'税收收入',
               type:'line',
               stack: '',
-              itemStyle:
-              {normal: {
+              data:sssr,itemStyle: {
+              normal: {
                 lineStyle: {
-                  type: 'dotted'
+                  color:'#127cff'
                 }
               }
-              },
-              data:[sssr[0],sssr[1],sssr[2],sssr[3],sssr[4],sssr[5],sssr[sssr.length-2],(sssr[sssr.length-2].value*1.2).toFixed(2)]
+            }
             },
             {
               name:'税收收入',
               type:'line',
               stack: '',
-              data:sssr
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    type: 'dotted',
+                    color:'#127cff'
+                  }
+                }
+              },
+              data:[sssr[0],sssr[1],sssr[2],sssr[3],sssr[4],sssr[5],sssr[sssr.length-2],(sssr[sssr.length-2].value*1.2).toFixed(2)]
             },
-
             {
               name:'地税组织收入',
               type:'line',
-              data:dszzsr
+              data:dszzsr,
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    color:'#0ecdf6'
+                  }
+                }
+              }
             },
             {
               name:'地税组织收入',
               type:'line',
               stack: '',
-              itemStyle:
-              {normal: {
-                lineStyle: {
-                  type: 'dotted'
+              itemStyle: {
+                normal: {
+                  lineStyle: {
+                    type: 'dotted',
+                    color:'#0ecdf6'
+                  }
                 }
-              }
               },
               data:[dszzsr[0],dszzsr[1],dszzsr[2],dszzsr[3],dszzsr[4],dszzsr[5],dszzsr[dszzsr.length-2],(dszzsr[dszzsr.length-2].value*1.2).toFixed(2)]
             }
@@ -541,9 +579,9 @@ app.controller("swdxCtrl",function($scope){
                   show: true,
                   type: 'scale',
                   loop: true,
-                  period: 20,
-                  scaleSize:20,
-                  shadowBlur:20
+                  period: 10,  //扩散速度
+                  scaleSize:30,
+                  shadowBlur:10
                 },
                 data :[{name:"杭州"}],
                 geoCoord: geoCoordflr
@@ -725,7 +763,7 @@ app.controller("swdxCtrl",function($scope){
               },
               splitLine:{
                 show:false
-              },
+              }
             },
             {
               type : 'value',
@@ -797,7 +835,10 @@ app.controller("swdxCtrl",function($scope){
             y2012[dataIndex].value,y2013[dataIndex].value,y2014[dataIndex].value,y2015[dataIndex].value);
         option = {
           timeline : {
-            x:0,//左侧距离
+            // x:0,//左侧距离
+            // right:0,
+            // padding:[0,30],
+            // left:'center',
             controlStyle:{
               normal:{
                 color:'#fff'
@@ -826,8 +867,9 @@ app.controller("swdxCtrl",function($scope){
                 //formatter: "{a} <br/>{b} : {c} ({d}%)"
               },
               legend: {
-                orient:'vertical',
-                x:'left',
+                // orient:'vertical',
+                padding:[0,100],
+                x:'center',
                 textStyle:{
                   color:"#ffffff"
                 },
@@ -854,6 +896,7 @@ app.controller("swdxCtrl",function($scope){
                   saveAsImage : {show: true}
                 }
               },
+              color:['#2874ff',  '#8426f8',  '#0cda63',  '#dbff14',  '#14b4ff'],
               series : [
                 {
                   name:'税收比',
