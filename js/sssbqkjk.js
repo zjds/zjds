@@ -202,8 +202,8 @@ require(
                             type: 'scale',
                             loop: true,
                             period: 20,
-                            scaleSize:20,
-                            shadowBlur:20
+                            scaleSize:30,
+                            shadowBlur:10
                         },
                         data :[{name:"杭州"}],
                         geoCoord: geoCoordflr
