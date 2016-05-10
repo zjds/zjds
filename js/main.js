@@ -140,6 +140,7 @@ app.controller("swdxCtrl",function($scope){
         'echarts',
         'echarts/chart/line'
       ],
+      //left折线
       function (echarts){
         var lineChart= echarts.init(document.getElementById('linecavs'));
         var dszzsr=[{value:parseFloat(sjjson.s2009.swbmsr)/100000000},{value:parseFloat(sjjson.s2010.swbmsr)/100000000},{value:parseFloat(sjjson.s2011.swbmsr)/100000000}, {
@@ -232,7 +233,7 @@ app.controller("swdxCtrl",function($scope){
             data:['地税组织收入','税收收入','社保基金收入','非税收入'],
             left:'left'
           },
-          color:['#0ecdf6','#127cff','#0edb26','#ffb21c'],
+          color:['#0ecdf6','#127cff','#0edb26','#ffb21c'],//系列颜色
           grid: {
             left: "left",
             right: '0%',
@@ -390,12 +391,13 @@ app.controller("swdxCtrl",function($scope){
           ]
         };
         lineChart.setOption(option);
-      }); //left折线
+      });
   require(
       [
         'echarts',
         'echarts/chart/map'
       ],
+      //center地图
       function (echarts){
         var myChart= echarts.init(document.getElementById('mapcavs'));
         var greendata=[
@@ -710,13 +712,14 @@ app.controller("swdxCtrl",function($scope){
             clearTimeout(r);
           },6000)
         },2000)
-      });  //center地图
+      });
   require(
       [
         'echarts',
         'echarts/chart/line',
         'echarts/chart/bar'
       ],
+      //right登记注册情况年度对比
       function (echarts) {
         var rightChart1 = echarts.init(document.getElementById('rightcavs1'));
         option = {
@@ -816,13 +819,14 @@ app.controller("swdxCtrl",function($scope){
           ]
         };
         rightChart1.setOption(option);
-      });  //right登记注册情况年度对比
+      });
   require(
       [
         'echarts',
         'echarts/chart/pie'
 
       ],
+      //分税种收入情况
       function(echarts){
         var right2=echarts.init(document.getElementById('rightcavs2'));
 
@@ -1093,7 +1097,57 @@ app.controller("swdxCtrl",function($scope){
           };
           myChart2.setOption(option2);
         });
-      });  //分税种收入情况
+      });
 
-})
-//以上为angularjs处理的数据
+  //全屏
+  $scope.launchFullScreen = function() {
+    if(document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if(document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if(document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen();
+    } else if(document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    }
+  }
+
+  //时钟
+  function showLocale(objD) {
+    var str,colorhead,colorfoot;
+    var yy = objD.getYear();
+    if(yy<1900) yy = yy+1900;
+    var MM = objD.getMonth()+1;
+    if(MM<10) MM = '0' + MM;
+    var dd = objD.getDate();
+    if(dd<10) dd = '0' + dd;
+    var hh = objD.getHours();
+    if(hh<10) hh = '0' + hh;
+    var mm = objD.getMinutes();
+    if(mm<10) mm = '0' + mm;
+    var ss = objD.getSeconds();
+    if(ss<10) ss = '0' + ss;
+    var ww = objD.getDay();
+    if ( ww==0 ) colorhead="<font color=\"#1871E3\">";
+    if ( ww > 0 && ww < 6 ) colorhead="<font color=\"#1871E3\">";
+    if ( ww==6 ) colorhead="<font color=\"#1871E3\">";
+    if (ww==0) ww="星期日";
+    if (ww==1) ww="星期一";
+    if (ww==2) ww="星期二";
+    if (ww==3) ww="星期三";
+    if (ww==4) ww="星期四";
+    if (ww==5) ww="星期五";
+    if (ww==6) ww="星期六";
+    colorfoot="</font>"
+    str = colorhead + yy + "年" + MM + "月" + dd + "日" + hh + ":" + mm + ":" + ss + " " + ww + colorfoot;
+    return(str);
+  }
+  function tick() {
+    var today;
+    today = new Date();
+    document.getElementById("localtime").innerHTML = showLocale(today);
+    setTimeout(tick, 1000);
+  }
+  tick();
+        })
+

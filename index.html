@@ -14,15 +14,15 @@
 <!--<script src="js/angular-ui-router.min.js"></script>-->
 
 <body ng-app="zjdx">
-<div class="home_bg">
+<div class="home_bg" ng-controller="swdxCtrl">
     <div id="header">
         <div class="left">
             <img src="imges/hanber@2.png" class="more"/>
             <img src="imges/logo.png"/>
         </div>
         <div class="right">
-            <span>2016年3月15日 15:30:56</span>
-            <span><img src="imges/full@2.png" class="fullImg"/>全屏显示</span>
+            <span id="localtime"></span>
+            <span ng-click="launchFullScreen()"><img src="imges/full@2.png" class="fullImg"/>全屏显示</span>
         </div>
         <div class="more_info">
             <img src="imges/close@2.png"/>
@@ -89,7 +89,7 @@
         <!--</ul>-->
         <!--</div></li><li>全屏展示</li></ul></div>-->
     </div>
-    <div id="section" ng-controller="swdxCtrl">
+    <div id="section">
         <div id="leftdiv">
             <div class="fresh">
                 <img src="imges/resh@2.png"/>

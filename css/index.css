@@ -125,7 +125,14 @@ ul li{
 }
 .more_detail dl dt img{
     width:6rem;
-    height:3.4rem
+    height:3.4rem;
+    border:1px solid #063c79;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.more_detail dl dt img:hover{
+    border:1px solid #0d71be;
 }
 .more_detail dl dd {
     color: #fff;
