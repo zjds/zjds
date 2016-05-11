@@ -81,7 +81,9 @@ ul li{
     overflow:hidden;
     transform: translateX(-18.5rem);/*left比较耗性能,造成卡顿*/
     transition:transform 1s linear;
-
+    -moz-transition:transform 1s linear;/* Firefox 4 */
+    -webkit-transition: transform 1s linear;/* Safari 和 Chrome */
+    -o-transition: transform 1s linear;/* Opera */
 }
 /*@keyframes yy*/
 /*{*/

@@ -1,0 +1,59 @@
+.qsdssrzsBox .pmBox{
+    width: auto;
+    height: 41rem;
+    padding: 10px 10px;
+    border: 1px solid #042774;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgba(1,46,138,0.1) none repeat scroll !important;
+    /*IE背景透明*/
+    background-color: #012e8a;
+    filter: alpha(opacity=10);
+}
+.qsdssrzsBox .pmBox .srBox{
+    width: 50%;
+    float: left;
+}
+.qsdssrzsBox .pmBox .zfBox{
+    width: 50%;
+    float: right;
+}
+.qsdssrzsBox .pmBox p{
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #2fc2ff;
+    /*margin-bottom: 10px;*/
+}
+.qsdssrzsBox .pmBox li{
+    width: 95%;
+    height: 3.2rem;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgba(1,46,138,0.4) none repeat scroll !important;
+    /*IE背景透明*/
+    background-color: #012e8a;
+    filter: alpha(opacity=40);
+    margin: 4px auto 0;
+    font-size: 1.3rem;
+    line-height: 3.2rem;
+    color: #ffffff;
+}
+.qsdssrzsBox .pmBox img{
+    vertical-align: middle;
+    margin: auto 8px;
+}
+.qsdssrzsBox .pmBox li:first-child img,
+.qsdssrzsBox .pmBox li:nth-child(2) img,
+.qsdssrzsBox .pmBox li:nth-child(3) img{
+    margin: auto 5px;
+}
+
+.qsdssrzsBox .pmBox .srBox li{
+    margin-right: 5px;
+}
+.qsdssrzsBox .pmBox ul li .dq{
+    margin-right: 10px;
+}

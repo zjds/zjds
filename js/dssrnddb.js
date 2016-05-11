@@ -115,6 +115,7 @@ require(
                 },
                 data:['地税组织收入','税收收入','非税收入','社保基金收入']
             },
+            color:['#0ecdf6','#127cff','#0edb26','#ffb21c'],
             grid: { //网格
                 left: "left",
                 right: '0%',
