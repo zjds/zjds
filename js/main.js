@@ -5,7 +5,15 @@
  * @description :
  */
 var app=angular.module("zjdx",[]);
-app.controller("swdxCtrl",function($scope){
+app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
+
+  mainService.query()
+      .then(function (data) {
+        console.log(data);
+      });
+
+
+
   $scope.djhs=0;
   $scope.bmsr=0;
   $scope.shuishou=0;
@@ -48,7 +56,7 @@ app.controller("swdxCtrl",function($scope){
     $scope.shuishou+=k3;
     $scope.feiss+=k4;
     $(".int").fadeOut(2000);
-    setTimeout(function(){
+    var a = setTimeout(function(){
       for(i=0;i<citydat.length;i++){
         var k=Math.floor(Math.random()*100000+1);
         citydat[i].value+=k;
@@ -127,7 +135,9 @@ app.controller("swdxCtrl",function($scope){
       $scope.ten6=newdata[8];
       $scope.ten7=newdata[9];
       $scope.ten8=newdata[10];
-      $scope.$digest();},2010)
+      $scope.$digest();
+      clearTimeout(a);
+    },2010)
   },3000);
   require.config({
     paths: {
@@ -220,7 +230,10 @@ app.controller("swdxCtrl",function($scope){
                 }
               }
 
-              setTimeout(function (){callback(ticket, res);}, 300);
+              var b = setTimeout(function (){
+                callback(ticket, res);
+                clearTimeout(b);
+              }, 300);
               return '计算中...';
             }
           },
@@ -1034,8 +1047,9 @@ app.controller("swdxCtrl",function($scope){
           ]
         };
         console.log(viewdata);
-        setTimeout(function(){
+        var c = setTimeout(function(){
           myChart2.setOption(option2);
+          clearTimeout(c);
         },800);
 
         right2.on('click', function (param) {
@@ -1146,8 +1160,36 @@ app.controller("swdxCtrl",function($scope){
     var today;
     today = new Date();
     document.getElementById("localtime").innerHTML = showLocale(today);
-    setTimeout(tick, 1000);
+    clearTimeout(d);
+    var d = setTimeout(tick, 1000);
   }
   tick();
-        })
+        }])
+
+
+
+    app.factory('mainService',['$http','$q',function($http,$q){
+      return{
+        query: function () {
+          var defer = $q.defer();
+          $http({
+            method: 'GET',
+            url: 'http://144.16.55.49:8088/gt3/dtzs/sssbdt'
+            // params:{
+            //     a: fpdm,
+            //     b: fphm,
+            //     c: fpje
+            // }
+          })
+              .success(function (data) {
+                defer.resolve(data);
+                // console.log(data);
+              })
+              .error(function () {
+                console.log('获取信息失败');
+              });
+          return defer.promise;
+        }
+      }
+}]);
 
