@@ -7,14 +7,14 @@ body{
     height: 50rem;
     position: relative;
 }
-.wbmlw .centerBox .cricle{
+.wbmlw .centerBox .circle{
     position:absolute;
     color: #ffffff;
     text-align: center;
     -webkit-transition:all 0.5s linear;
     -o-transition: all 0.5s linear;
 }
-.wbmlw .centerBox .cricle:hover{
+.wbmlw .centerBox .circle:hover{
     background: #ffffff;
     width: 220px;
     height: 80px;
@@ -460,7 +460,7 @@ body{
     /*filter: alpha(opacity=50);*/
     background: url("../imges/椭圆-5-拷贝-2.png");
     background-size: 100%;
-    border: 1px solid #a4a1a1;
+    /*border: 1px solid #a4a1a1;*/
     animation:fuckYou 9s infinite;
     animation-direction:alternate;
     position: absolute;
