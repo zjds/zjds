@@ -128,10 +128,17 @@ require(
 
     require('echarts/util/mapData/params').params.zj= {
       getGeoJson: function (callback) {
-        $.getJSON('../zhejiangv1.json', function (data) {
-          // 压缩后的地图数据必须使用 decode 函数转换
-          callback(require('echarts/util/mapData/params').decode(data));
-        })
+        // $.getJSON('../zhejiangv1.json', function (data) {
+        //   // 压缩后的地图数据必须使用 decode 函数转换
+        //   callback(require('echarts/util/mapData/params').decode(data));
+        // })
+        $.ajax({
+          url: "../xml/32432.svg",
+          dataType: 'xml',
+          success: function(xml) {
+            callback(xml)
+          }
+        });
       }
       //取得浙江省地图。。。没法调出二级。。。暂时放弃
     }

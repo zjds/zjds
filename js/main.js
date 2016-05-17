@@ -7,11 +7,53 @@
 var app=angular.module("zjdx",[]);
 app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
 
-  mainService.query()
-      .then(function (data) {
-        console.log(data);
-      });
 
+  // setInterval(function () {
+  //
+  // },300000);
+
+  mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbdt')
+      .then(function (data) {
+        console.log(data,'当天');
+
+      });
+  mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss')
+      .then(function (data) {
+        console.log(data,'实时');
+        // timeTicket = setInterval(function (){
+        //   var mydata=[];
+        //   var aadata=[];//保存处理完成的结果集
+        //   var str=',{data:[';//保存线性数据
+        //   var strpont=',{data:[';//保存点状数据
+        //   var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
+        //   for(i=0, k={},l={};i<number;i++){
+        //     var ronndnum=Math.floor(Math.random()*arrayObj.length);
+        //     mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
+        //     aadata.push(mydata);
+        //   }  //将数据压入aadata
+        //   for(i=0;i<aadata.length;i++){
+        //     str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
+        //     //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
+        //     strpont+='{name:"'+aadata[i][0].name+'"},';
+        //   }
+        //   // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});
+        //   str=str.substring(0,(str.length-1))+']})';
+        //   strpont=strpont.substring(0,(strpont.length-1))+']})'
+        //   eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
+        //   var t = setTimeout(function(){
+        //         eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
+        //         clearTimeout(t);
+        //       }
+        //       ,1000);
+        //   var r = setTimeout(function(){//回收canvas上的所有线跟点。
+        //     for(i=0;i<aadata.length;i++){
+        //       eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
+        //       eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
+        //     }
+        //     clearTimeout(r);
+        //   },6000)
+        // },2000)
+      })
 
 
   $scope.djhs=0;
@@ -546,6 +588,7 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
             }
           },
           series : [
+              //定位省局点
             {
               name: '浙江数据',
               type: 'map',
@@ -600,8 +643,9 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
                 },
                 data :[{name:"杭州"}],
                 geoCoord: geoCoordflr
-              },
+              }
             },
+              //定位地市点
             {
               name: '浙江数据',
               type: 'map',
@@ -697,12 +741,12 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           var aadata=[];//保存处理完成的结果集
           var str=',{data:[';//保存线性数据
           var strpont=',{data:[';//保存点状数据
-          var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删
+          var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
           for(i=0, k={},l={};i<number;i++){
             var ronndnum=Math.floor(Math.random()*arrayObj.length);
             mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
             aadata.push(mydata);
-          }
+          }  //将数据压入aadata
           for(i=0;i<aadata.length;i++){
             str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
             //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
@@ -711,9 +755,9 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});
           str=str.substring(0,(str.length-1))+']})';
           strpont=strpont.substring(0,(strpont.length-1))+']})'
-          eval('myChart.addMarkPoint('+1+strpont);
+          eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
           var t = setTimeout(function(){
-                eval('myChart.addMarkLine('+1+str);
+                eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
                 clearTimeout(t);
               }
               ,1000);
@@ -1170,11 +1214,12 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
 
     app.factory('mainService',['$http','$q',function($http,$q){
       return{
-        query: function () {
+        query: function (url) {
           var defer = $q.defer();
           $http({
             method: 'GET',
-            url: 'http://144.16.55.49:8088/gt3/dtzs/sssbdt'
+            url:url
+                // 'http://144.16.55.49:8088/gt3/dtzs/sssbdt'
             // params:{
             //     a: fpdm,
             //     b: fphm,
