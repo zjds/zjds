@@ -16,8 +16,8 @@
     <script src="../js/angular.min.js"></script>
     <!--<script src="js/angular-ui-router.min.js"></script>-->
 </head>
-<body>
-<div class="box">
+<body ng-app="sssbqkjk">
+<div class="box" ng-controller="sssbqkjkCtrl">
     <div class="topBox">
         <p class="title">实时申报情况监控</p>
         <!--<img src="./imges/titleBackground.png">-->
@@ -29,11 +29,11 @@
                 <p class="title">单日申报</p>
                 <ul>
                     <li>
-                        <p class="data">87532.17</p>
+                        <p class="data">{{sbje}}</p>
                         <p class="dw">万元</p>
                     </li>
                     <li>
-                        <p class="data">10355</p>
+                        <p class="data">{{sbbs}}</p>
                         <p class="dw">笔</p>
                     </li>
                 </ul>

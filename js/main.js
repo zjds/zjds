@@ -8,54 +8,6 @@ var app=angular.module("zjdx",[]);
 app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
 
 
-  // setInterval(function () {
-  //
-  // },300000);
-
-  mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbdt')
-      .then(function (data) {
-        console.log(data,'当天');
-
-      });
-  mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss')
-      .then(function (data) {
-        console.log(data,'实时');
-        // timeTicket = setInterval(function (){
-        //   var mydata=[];
-        //   var aadata=[];//保存处理完成的结果集
-        //   var str=',{data:[';//保存线性数据
-        //   var strpont=',{data:[';//保存点状数据
-        //   var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
-        //   for(i=0, k={},l={};i<number;i++){
-        //     var ronndnum=Math.floor(Math.random()*arrayObj.length);
-        //     mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
-        //     aadata.push(mydata);
-        //   }  //将数据压入aadata
-        //   for(i=0;i<aadata.length;i++){
-        //     str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
-        //     //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
-        //     strpont+='{name:"'+aadata[i][0].name+'"},';
-        //   }
-        //   // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});
-        //   str=str.substring(0,(str.length-1))+']})';
-        //   strpont=strpont.substring(0,(strpont.length-1))+']})'
-        //   eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
-        //   var t = setTimeout(function(){
-        //         eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
-        //         clearTimeout(t);
-        //       }
-        //       ,1000);
-        //   var r = setTimeout(function(){//回收canvas上的所有线跟点。
-        //     for(i=0;i<aadata.length;i++){
-        //       eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
-        //       eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
-        //     }
-        //     clearTimeout(r);
-        //   },6000)
-        // },2000)
-      })
-
-
   $scope.djhs=0;
   $scope.bmsr=0;
   $scope.shuishou=0;
@@ -87,12 +39,14 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
     var k2=Math.floor(Math.random()*200000+100000);
     var k3=Math.floor(Math.random()*100000+50000);
     var k4=Math.floor(Math.random()*60000+20000);
+    //增加数
     $scope.int1=k1;
     $scope.int2=k2;
     $scope.int3=k3;
     $scope.int4=k4;
     $scope.$digest()
     $(".int").fadeIn(10);
+    //实时数
     $scope.djhs+=k1;
     $scope.bmsr+=k2;
     $scope.shuishou+=k3;
@@ -489,28 +443,105 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           //[{name:'临安市'},{name:'杭州'}]
         ]//上
         var geoCoordflr= {
-          '嘉兴':[120.76, 30.77],
-          '杭州':[120.19, 30.26],
-          //'上城区':[120.17,30.25],
-          //'下城区':[120.17,30.28],
-          //'江干区':[120.2	,30.27],
-          //'拱墅区':[120.13,30.32],
-          //'西湖区':[120.13,30.27],
-          //'滨江区':[120.2	,30.2 ],
-          //'萧山区':[120.27,30.17],
-          //'余杭区':[120.3	,30.42],
-          //'桐庐县':[119.67,29.8],
-          //'淳安县':[119.03,29.6],
-          '建德':[119.28,29.48],
-          '宁波':[121.55,29.88],
-          '丽水':[119.92, 28.45],
+          '省局直属局':[120.13,30.27],
+          '嘉兴市局本级':[120.76, 30.77],
+          '嘉兴三局':[120.67,30.51],
+          '嘉善县局':[120.92,30.84],
+          '平湖市局':[121.02,30.7],
+          '海盐县局':[120.92,30.53],
+          '桐乡市局':[120.54,30.64],
+          '海宁市局':[120.69,30.53],
+          '杭州市局本级':[120.19, 30.26],
+          // '上城区':[120.17,30.25],
+          // '下城区':[120.17,30.28],
+          // '江干区':[120.2	,30.27],
+          // '拱墅区':[120.13,30.32],
+          // '西湖区':[120.13,30.27],
+          // '滨江区':[120.2	,30.2 ],
+          // '萧山区':[120.27,30.17],
+          // '余杭区':[120.3	,30.42],
+          '桐庐县局':[119.67,29.8],
+          '富阳市局':[119.95,30.07],
+          '临安县局':[119.72,30.23],
+          '余杭局':[120.3,30.43],
+          '淳安县局':[119.03,29.6],
+          '建德市局':[119.28,29.48],
+          '萧山局':[120.25,30.16],
+          '宁波直属分局':[121.55,29.88],
+          '保税区':[121.85,29.92],
+          '海曙区':[121.55,29.87],
+          '江东区':[121.57,29.87],
+          '江北区':[121.55,29.88],
+          '北仑区':[121.85,29.93],
+          '宁波高新分局':[121.61,29.88],
+          '东钱湖分局':[121.63,29.79],
+          '大榭开发区':[121.93,29.89],
+          '镇海区':[121.72,29.95],
+          '宁波杭州湾分局':[121.13,30.25],
+          '象山县':[121.87,29.48],
+          '宁海县':[121.43,29.28],
+          '余姚市':[121.15,30.04],
+          '鄞州区':[121.53,29.83],
+          '慈溪市':[121.23,30.17],
+          '奉化市':[121.4,29.65],
+          '宁波契税征收管理中心':[121.54,29.88],
+          '丽水市局本级':[119.92, 28.45],
+          '龙泉市局':[119.13,28.08],
+          '青田县局':[120.28,28.45],
+          '云和县局':[119.56,28.12],
+          '庆元县局':[119.06,27.61],
+          '缙云县局':[120.6,28.66],
+          '遂昌县局':[119.25,28.59],
+          '松阳县局':[119.48,28.46],
+          '景宁县局':[119.63,27.98],
           '义乌':[120.06, 29.32],
-          '温州':[120.65,28.01],
-          '湖州':[120.1,30.86],
-          '金华':[119.64,29.12],
-          '舟山':[122.2,30],
-          '台州':[121.43,28.68],
-          '衢州':[118.87,28.93]
+          '温州市局本级':[120.65,28.01],
+          '洞头区局':[121.12,27.84],
+          '乐清市局':[120.94,28.14],
+          '永嘉县局':[120.68,28.16],
+          '平阳县局':[120.55,27.68],
+          '苍南县局':[120.36,27.53],
+          '文成县局':[120.08,27.08],
+          '泰顺县局':[119.7,27.57],
+          '瑞安市局':[120.62,27.8],
+          '湖州市局本级':[120.1,30.86],
+          '德清县局':[119.97,30.57],
+          '长兴县局':[119.9,31.02],
+          '安吉县局':[119.68,30.68],
+          '金华市局本级':[119.64,29.12],
+          '永康市局':[120.02,28.92],
+          '武义县局':[119.81,28.9],
+          '义乌市局':[120.06,29.32],
+          '浦江县局':[119.88,29.46],
+          '磐安县局':[119.48,29.19],
+          '兰溪市局':[119.46,29.21],
+          '东阳市局':[120.23,120.23],
+          '舟山市局本级':[122.2,30],
+          '定海区局':[122.11,30.03],
+          '普陀区局':[122.3,122.3],
+          '岱山县局':[122.3,122.3],
+          '嵊泗县局':[122.3,122.3],
+          '台州市局本级':[121.43,28.68],
+          '椒江区局':[121.44,28.67],
+          '路桥区局':[121.38,28.58],
+          '黄岩区局':[121.27,28.64],
+          '临海市局':[121.13,28.8],
+          '温岭市局':[121.36,28.36],
+          '仙居县局':[120.73,28.85],
+          '天台县局':[121.03,29.15],
+          '三门县局':[121.38,29.11],
+          '玉环县局':[121.23,28.14],
+          '衢州市局本级':[118.87,28.93],
+          '常山县局':[118.5,28.9],
+          '江山市局':[118.61,28.74],
+          '开化县局':[118.39,29.15],
+          '龙游县局':[119.17,29.03],
+          '绍兴市局本级':[120.58,30.01],
+          '柯桥区局':[120.49,30.08],
+          '新昌县局':[120.89,29.49],
+          '诸暨市局':[120.23,29.71],
+          '上虞区局':[120.87,30.03],
+          '嵊州市局':[120.81,29.6]
         };
         require('echarts/util/mapData/params').params.zj= {
           getGeoJson: function (callback) {
@@ -641,7 +672,7 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
                   scaleSize:30,
                   shadowBlur:10
                 },
-                data :[{name:"杭州"}],
+                data :[{name:"省局直属局"}],
                 geoCoord: geoCoordflr
               }
             },
@@ -700,75 +731,225 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
                 smooth:true,
                 data : greendata
               },
-              geoCoord: {
-                '嘉兴':[120.76, 30.77],
-                '绍兴':[120.58, 30.01],
-                '杭州':[120.19, 30.26],
-                '上城区':[120.17,30.25],
-                '下城区':[120.17,30.28],
-                '江干区':[120.2	,30.27],
-                '拱墅区':[120.13,30.32],
-                '西湖区':[120.13,30.27],
-                '滨江区':[120.2	,30.2 ],
-                '萧山区':[120.27,30.17],
-                '余杭区':[120.3	,30.42],
-                '桐庐县':[119.67,29.8],
-                '淳安县':[119.03,29.6],
-                '建德':[119.28,29.48],
-                '富阳':[119.95,30.05],
-                '临安':[119.72,30.23],
-                '宁波':[121.55,29.88],
-                '丽水':[119.92, 28.45],
-                '义乌':[120.06, 29.32],
-                '余杭':[120.3,30.43],
-                '温州':[120.65,28.01],
-                '湖州':[120.1,30.86],
-                '金华':[119.64,29.12],
-                '舟山':[122.2,30],
-                '台州':[121.43,28.68],
-                '衢州':[118.87,28.93]
-              }
+              geoCoord: geoCoordflr
             }
           ]
         };
         myChart.setOption(option);
-        var arrayObj = [];
-        for(var key in geoCoordflr){
-          arrayObj.push(key);//将城市结果集所有key（城市名）压入arrayobj
-        }
-        timeTicket = setInterval(function (){
-          var mydata=[];
-          var aadata=[];//保存处理完成的结果集
-          var str=',{data:[';//保存线性数据
-          var strpont=',{data:[';//保存点状数据
-          var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
-          for(i=0, k={},l={};i<number;i++){
-            var ronndnum=Math.floor(Math.random()*arrayObj.length);
-            mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
-            aadata.push(mydata);
-          }  //将数据压入aadata
-          for(i=0;i<aadata.length;i++){
-            str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
-            //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
-            strpont+='{name:"'+aadata[i][0].name+'"},';
-          }
-          // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});
-          str=str.substring(0,(str.length-1))+']})';
-          strpont=strpont.substring(0,(strpont.length-1))+']})'
-          eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
-          var t = setTimeout(function(){
-                eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
-                clearTimeout(t);
-              }
-              ,1000);
-          var r = setTimeout(function(){//回收canvas上的所有线跟点。
+        $scope.ssDate = '';
+        mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?sssbtjsj=')
+            .then(
+                function (data) {
+                  console.log(data,'实时');
+                  // console.log(data.root.sssbGrid[0]);
+                  $scope.ssData = data.root.sssbGrid;
+                  $scope.ssDate = data.root.sssbtjsj;
+                }
+            );
+        $scope.sssb = setInterval(
+            function () {
+              mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?',$scope.ssDate)
+                  .then(
+                      function (data) {
+                        console.log(data,'实时');
+                        // console.log(data.root.sssbGrid[0]);
+                        $scope.ssData = data.root.sssbGrid;
+                        $scope.ssDate = data.root.sssbtjsj;
+                      }
+                  );
+            },300000);
+          $scope.timeTicket = setInterval(function (){
+            var mydata=[];
+            var aadata=[];//保存处理完成的结果集
+            var str=',{data:[';//保存线性数据
+            var strpont=',{data:[';//保存点状数据
+            var number=Math.floor(Math.random()*2+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
+            for(i=0, k={},l={};i<number;i++){
+              // var ronndnum=Math.floor(Math.random()*arrayObj.length);
+              mydata=[{'name':$scope.ssData[i].swjmc},{'name':'省局直属局'}];
+              // console.log($scope.ssData[i].swjmc);
+              aadata.push(mydata);
+            }  //将数据压入aadata
             for(i=0;i<aadata.length;i++){
-              eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
-              eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
+              str+='[{"name":"'+aadata[i][0].name+'"},{"name":"省局直属局"}],';
+              //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
+              strpont+='{name:"'+aadata[i][0].name+'"},';
             }
-            clearTimeout(r);
-          },6000)
-        },2000)
+            $scope.ssData = $scope.ssData.slice(number);
+            // console.log($scope.ssData.length);
+            // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});方法
+            str=str.substring(0,(str.length-1))+']})';
+            strpont=strpont.substring(0,(strpont.length-1))+']})'
+            eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
+            var t = setTimeout(function(){
+                  eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
+                  clearTimeout(t);
+                }
+                ,1000);
+            var r = setTimeout(function(){//回收canvas上的所有线跟点。
+              for(i=0;i<aadata.length;i++){
+                eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州市局本级")');
+                eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
+              }
+              clearTimeout(r);
+            },6000)
+          },4000)
+
+
+        //测试地图经纬度数据
+        // var cscscs = {
+        //
+        //   '嘉兴':[120.76, 30.77],
+        //   // '嘉兴':[],
+        //   '嘉善':[120.92,30.84],
+        //   '平湖':[121.02,30.7],
+        //   '海盐':[120.92,30.53],
+        //   '桐乡':[120.54,30.64],
+        //   '海宁':[120.69,30.53],
+        //   '杭州':[120.19, 30.26],
+        //   // '上城区':[120.17,30.25],
+        //   // '下城区':[120.17,30.28],
+        //   // '江干区':[120.2	,30.27],
+        //   // '拱墅区':[120.13,30.32],
+        //   // '西湖区':[120.13,30.27],
+        //   // '滨江区':[120.2	,30.2 ],
+        //   // '萧山区':[120.27,30.17],
+        //   // '余杭区':[120.3	,30.42],
+        //   '桐庐':[119.67,29.8],
+        //   '富阳':[119.95,30.07],
+        //   '临安':[119.72,30.23],
+        //   '余杭':[120.3,30.43],
+        //   '淳安':[119.03,29.6],
+        //   '建德':[119.28,29.48],
+        //   '萧山':[120.25,30.16],
+        //   '宁波':[121.55,29.88],
+        //   // '保税':[],
+        //   '海曙':[121.55,29.87],
+        //   '江东':[121.57,29.87],
+        //   '江北':[121.55,29.88],
+        //   '北仑':[121.85,29.93],
+        //   // '高新':[],
+        //   // '东钱湖分局':[],
+        //   // '大榭开发区':[],
+        //   '镇海':[121.72,29.95],
+        //   // '宁波杭州湾分局':[],
+        //   '象山':[121.87,29.48],
+        //   '宁海':[121.43,29.28],
+        //   '鄞州':[121.53,29.83],
+        //   '慈溪':[121.23,30.17],
+        //   '奉化':[121.4,29.65],
+        //   // '宁波契税征收管理中心':[],
+        //   '丽水地区':[119.92, 28.45],
+        //   '温州':[120.65,28.01],
+        //   '洞头':[121.12,27.84],
+        //   '乐清':[120.94,28.14],
+        //   '永嘉':[120.68,28.16],
+        //   '平阳':[120.55,27.68],
+        //   '苍南':[120.36,27.53],
+        //   '文成':[120.08,27.08],
+        //   '泰顺':[119.7,27.57],
+        //   '瑞安':[120.62,27.8],
+        //   '湖州':[120.1,30.86],
+        //   '德清':[119.97,30.57],
+        //   '长兴':[119.9,31.02],
+        //   '安吉':[119.68,30.68],
+        //   '金华':[119.64,29.12],
+        //   '永康':[120.02,28.92],
+        //   '武义':[119.81,28.9],
+        //   '义乌':[120.06,29.32],
+        //   '浦江':[119.88,29.46],
+        //   '磐安':[119.48,29.19],
+        //   // '兰溪':[],
+        //   '东阳':[120.23,120.23],
+        //   '舟山':[122.2,30],
+        //   '定海':[122.11,30.03],
+        //   '普陀':[122.3,122.3],
+        //   '岱山':[122.3,122.3],
+        //   '嵊泗':[122.3,122.3],
+        //   '台州':[121.43,28.68],
+        //   '椒江':[121.44,28.67],
+        //   '路桥':[121.38,28.58],
+        //   '黄岩':[121.27,28.64],
+        //   '临海':[121.13,28.8],
+        //   '温岭':[121.36,28.36],
+        //   '仙居':[120.73,28.85],
+        //   '天台':[121.03,29.15],
+        //   '三门':[121.38,29.11],
+        //   '玉环':[121.23,28.14],
+        //   '衢州':[118.87,28.93],
+        //   '常山':[118.5,28.9],
+        //   '江山':[118.61,28.74],
+        //   '开化':[118.39,29.15],
+        // }
+
+        //测试markLine数据
+        // {
+        //   '嘉兴':[120.76, 30.77],
+        //   '绍兴':[120.58, 30.01],
+        //   '杭州':[120.19, 30.26],
+        //   '上城区':[120.17,30.25],
+        //   '下城区':[120.17,30.28],
+        //   '江干区':[120.2	,30.27],
+        //   '拱墅区':[120.13,30.32],
+        //   '西湖区':[120.13,30.27],
+        //   '滨江区':[120.2	,30.2 ],
+        //   '萧山区':[120.27,30.17],
+        //   '余杭区':[120.3	,30.42],
+        //   '桐庐县':[119.67,29.8],
+        //   '淳安县':[119.03,29.6],
+        //   '建德':[119.28,29.48],
+        //   '富阳':[119.95,30.05],
+        //   '临安':[119.72,30.23],
+        //   '宁波':[121.55,29.88],
+        //   '丽水':[119.92, 28.45],
+        //   '义乌':[120.06, 29.32],
+        //   '余杭':[120.3,30.43],
+        //   '温州':[120.65,28.01],
+        //   '湖州':[120.1,30.86],
+        //   '金华':[119.64,29.12],
+        //   '舟山':[122.2,30],
+        //   '台州':[121.43,28.68],
+        //   '衢州':[118.87,28.93]
+        // }
+
+        //地图动画测试
+        // var arrayObj = [];
+        // for(var key in geoCoordflr){
+        //   arrayObj.push(key);//将城市结果集所有key（城市名）压入arrayobj
+        // }
+        // timeTicket = setInterval(function (){
+        //   var mydata=[];
+        //   var aadata=[];//保存处理完成的结果集
+        //   var str=',{data:[';//保存线性数据
+        //   var strpont=',{data:[';//保存点状数据
+        //   var number=Math.floor(Math.random()*5+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
+        //   for(i=0, k={},l={};i<number;i++){
+        //     var ronndnum=Math.floor(Math.random()*arrayObj.length);
+        //     mydata=[{'name':arrayObj[ronndnum]},{'name':'杭州'}];
+        //     aadata.push(mydata);
+        //   }  //将数据压入aadata
+        //   for(i=0;i<aadata.length;i++){
+        //     str+='[{"name":"'+aadata[i][0].name+'"},{"name":"杭州"}],';
+        //     //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
+        //     strpont+='{name:"'+aadata[i][0].name+'"},';
+        //   }
+        //   // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});
+        //   str=str.substring(0,(str.length-1))+']})';
+        //   strpont=strpont.substring(0,(strpont.length-1))+']})'
+        //   eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
+        //   var t = setTimeout(function(){
+        //         eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
+        //         clearTimeout(t);
+        //       }
+        //       ,1000);
+        //   var r = setTimeout(function(){//回收canvas上的所有线跟点。
+        //     for(i=0;i<aadata.length;i++){
+        //       eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州")');
+        //       eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
+        //     }
+        //     clearTimeout(r);
+        //   },6000)
+        // },2000)
       });
   require(
       [
@@ -1214,17 +1395,15 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
 
     app.factory('mainService',['$http','$q',function($http,$q){
       return{
-        query: function (url) {
+        query: function (url,date) {
           var defer = $q.defer();
           $http({
             method: 'GET',
-            url:url
+            url:url,
                 // 'http://144.16.55.49:8088/gt3/dtzs/sssbdt'
-            // params:{
-            //     a: fpdm,
-            //     b: fphm,
-            //     c: fpje
-            // }
+            params:{
+              sssbtjsj: date
+            }
           })
               .success(function (data) {
                 defer.resolve(data);
@@ -1236,5 +1415,5 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           return defer.promise;
         }
       }
-}]);
+    }]);
 
