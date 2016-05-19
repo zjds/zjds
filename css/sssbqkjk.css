@@ -36,6 +36,8 @@
     height: 3rem;
     font-size: 2.5rem;
     color: #ffc321;
+    width: 79%;
+    overflow: hidden;
 }
 .sssbqkjkBox .drsb .dw{
     color: #fff;

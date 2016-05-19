@@ -449,7 +449,7 @@ app.controller("sssbqkjkCtrl",['$scope','mainService',function($scope,mainServic
                     console.log(data,'当天');
                     // console.log(data.root.value[0].sbbs);
                     $scope.sbbs = data.root.value[0].sbbs;
-                    $scope.sbje = parseFloat((data.root.value[0].sbje/10000),2);
+                    $scope.sbje = parseFloat(data.root.value[0].sbje/10000);
                 });
             mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?sssbtjsj=')
                 .then(
@@ -487,7 +487,7 @@ app.controller("sssbqkjkCtrl",['$scope','mainService',function($scope,mainServic
                     // console.log($scope.ssData[i].swjmc);
                     aadata.push(mydata);
                     console.log($scope.ssData[i].swjmc);
-                    $scope.addsbje=parseFloat(($scope.addsbje+$scope.ssData[i].sbje/10000),2);
+                    $scope.addsbje=parseFloat($scope.addsbje+$scope.ssData[i].sbje/10000);
                     $scope.addsbbs = parseFloat($scope.addsbbs+$scope.ssData[i].sbbs);
                 }  //将数据压入aadata
                 for(i=0;i<aadata.length;i++){
@@ -504,7 +504,7 @@ app.controller("sssbqkjkCtrl",['$scope','mainService',function($scope,mainServic
                 var t = setTimeout(function(){
                         eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
                         $scope.sbje = parseFloat($scope.sbje+$scope.addsbje);
-                        $scope.sbje = $scope.sbje.toFixed(2)
+                        // $scope.sbje = $scope.sbje.toFixed(2)
                         $scope.sbbs = parseFloat($scope.sbbs+$scope.addsbbs);
                         clearTimeout(t);
                     }
