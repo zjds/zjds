@@ -1,3 +1,7 @@
+/**
+ * Created by dingtianxiu on 16/5/13.
+ */
+
 var nulldata=[];
 var linedata=[];
 linedata.push(parseFloat(s2009[0].value),parseFloat(s2010[0].value),parseFloat(s2011[0].value),parseFloat(s2012[0].value),parseFloat(s2013[0].value),parseFloat(s2014[0].value),parseFloat(s2015[0].y),783.68)

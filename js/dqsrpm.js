@@ -1,5 +1,5 @@
 /**
- * Created by dtx on 16/5/9.
+ * Created by dingtianxiu on 16/5/9.
  * decription:地区收入排名
  */
 var app = angular.module("dqsrpm",[]);

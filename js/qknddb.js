@@ -1,3 +1,6 @@
+/**
+ * Created by dingtianxiu on 16/5/13.
+ */
 $(function () {
   var series = {
     yAxis: 0,

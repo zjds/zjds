@@ -1,20 +1,20 @@
 /**
- * @author : FuLouRong
+ * @author : dingtianxiu
  * @date : 2016/4/7
  * @module :
  * @description :
  */
 var scrollMoveObj = null, scrollPageY = 0, scrollY = 0;
 var scrollDivList = new Array();
-// objÐèÒªÌí¼Ó¹ö¶¯ÌõµÄ¶ÔÏó w¹ö¶¯Ìõ¿í¶È className¹ö¶¯ÌõÑùÊ½Ãû³Æ
-// objÔªËØ ±ØÐëÖ¸¶¨¸ß¶È£¬²¢ÉèÖÃoverflow:hidden;
-// ÈçÒª¼æÈÝIE6 ±ØÐë¸øobjÔªËØ Ö¸¶¨ overflow:hidden;
+// objï¿½ï¿½Òªï¿½ï¿½Ó¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ classNameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
+// objÔªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ß¶È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½overflow:hidden;
+// ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½IE6 ï¿½ï¿½ï¿½ï¿½ï¿½objÔªï¿½ï¿½ Ö¸ï¿½ï¿½ overflow:hidden;
 function jsScroll(obj, w, className)
 {
   if(typeof(obj) == 'string')	{
     obj = document.getElementById(obj);
   }
-  //µ±ÄÚÈÝÎ´³¬³öÏÖÔÚ¸ß¶ÈÊ±£¬²»Ìí¼Ó¹ö¶¯Ìõ
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ß¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¹ï¿½ï¿½ï¿½ï¿½ï¿½
   if(!obj || obj.scrollHeight <= obj.clientHeight || obj.clientHeight == 0) {
     return;
   }
@@ -35,13 +35,13 @@ function jsScroll(obj, w, className)
   scrollDivList.push(obj);
   scrollResetSize(obj);
 
-  //Ê¹ÓÃÊó±ê¹öÂÖ¹ö¶¯
+  //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½
   obj.scrollBar.scrollDiv = obj;
   obj.scrollBarIndex.scrollDiv = obj;
   obj.onmousewheel = scrollMove;
   obj.scrollBar.onmousewheel = scrollMove;
   obj.scrollBarIndex.onmousewheel = scrollMove;
-  //ÍÏ¶¯¹ö¶¯Ìõ¹ö¶¯
+  //ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   obj.scrollBarIndex.onmousedown = function(evt){
     evt = evt || event;
     scrollPageY = evt.clientY;
@@ -55,13 +55,13 @@ function jsScroll(obj, w, className)
     return false;
   }
 }
-//µ±Ò³Ãæ´óÐ¡·¢Éú±ä»¯Ê±£¬ÖØÐÂ¼ÆËã¹ö¶¯ÌõÎ»ÖÃ
+//ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ä»¯Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 window.onresize = function(){
   for(var i=0; i<scrollDivList.length; i++) {
     scrollResetSize(scrollDivList[i]);
   }
 }
-//¼ÆËã¹ö¶¯ÌõÎ»ÖÃ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 function scrollResetSize(o) {
   if(o.scrollHeight <= o.clientHeight) {
     o.scrollTop = 0;
@@ -84,7 +84,7 @@ function scrollResetSize(o) {
   o.scrollBar.style.left = x + o.offsetWidth - o.scrollBarWidth + 'px';
   o.scrollBarIndex.style.width = o.scrollBarWidth + 'px';
   var h = o.clientHeight - (o.scrollHeight - o.clientHeight);
-  //µ±¹ö¶¯Ìõ»¬¿é×îÐ¡20¸öÏñËØ
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡20ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   if(h < 20) {
     h = 20;
   }
@@ -108,13 +108,13 @@ document.documentElement.onmousemove = function(evt){
 document.documentElement.onmouseup = function(evt){
   if(!scrollMoveObj)return;
   if(scrollMoveObj.scrollBar.className == 'divInfo') {
-    scrollMoveObj.scrollBarIndex.style.backgroundColor = '#035FB6';//ÑÕÉ«
+    scrollMoveObj.scrollBarIndex.style.backgroundColor = '#035FB6';//ï¿½ï¿½É«
   }
   scrollMoveObj = null;
   document.body.onselectstart = function(){return true};
 }
 
-// Êó±ê¹öÂÖ¹ö¶¯
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½
 function scrollMove(evt){
   var div = this.scrollDiv || this;
   if(div.scrollHeight <= div.clientHeight) return true;

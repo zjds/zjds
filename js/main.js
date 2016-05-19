@@ -1,5 +1,5 @@
 /**
- * @author : FuLouRong
+ * @author : dingtianxiu
  * @date : 2016/3/24
  * @module :
  * @description :
@@ -494,14 +494,13 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           '遂昌县局':[119.25,28.59],
           '松阳县局':[119.48,28.46],
           '景宁县局':[119.63,27.98],
-          '义乌':[120.06, 29.32],
           '温州市局本级':[120.65,28.01],
           '洞头区局':[121.12,27.84],
           '乐清市局':[120.94,28.14],
           '永嘉县局':[120.68,28.16],
           '平阳县局':[120.55,27.68],
           '苍南县局':[120.36,27.53],
-          '文成县局':[120.08,27.08],
+          '文成县局':[120.09,27.79],//位置在海上,坐标不准确
           '泰顺县局':[119.7,27.57],
           '瑞安市局':[120.62,27.8],
           '湖州市局本级':[120.1,30.86],
@@ -515,12 +514,12 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           '浦江县局':[119.88,29.46],
           '磐安县局':[119.48,29.19],
           '兰溪市局':[119.46,29.21],
-          '东阳市局':[120.23,120.23],
+          '东阳市局':[120.23,29.29],
           '舟山市局本级':[122.2,30],
           '定海区局':[122.11,30.03],
-          '普陀区局':[122.3,122.3],
-          '岱山县局':[122.3,122.3],
-          '嵊泗县局':[122.3,122.3],
+          '普陀区局':[122.3,29.95],
+          '岱山县局':[122.3,30.25],
+          '嵊泗县局':[122.3,30.73],
           '台州市局本级':[121.43,28.68],
           '椒江区局':[121.44,28.67],
           '路桥区局':[121.38,28.58],
@@ -543,6 +542,107 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           '上虞区局':[120.87,30.03],
           '嵊州市局':[120.81,29.6]
         };
+        var ab= [
+          '省局直属局',
+          '嘉兴市局本级',
+          '嘉兴三局',
+          '嘉善县局',
+          '平湖市局',
+          '海盐县局',
+          '桐乡市局',
+          '海宁市局',
+          '杭州市局本级',
+          // '上城区':[120.17,30.25],
+          // '下城区':[120.17,30.28],
+          // '江干区':[120.2	,30.27],
+          // '拱墅区':[120.13,30.32],
+          // '西湖区':[120.13,30.27],
+          // '滨江区':[120.2	,30.2 ],
+          // '萧山区':[120.27,30.17],
+          // '余杭区':[120.3	,30.42],
+          '桐庐县局',
+          '富阳市局',
+          '临安县局',
+          '余杭局',
+          '淳安县局',
+          '建德市局',
+          '萧山局',
+          '宁波直属分局',
+          '保税区',
+          '海曙区',
+          '江东区',
+          '江北区',
+          '北仑区',
+          '宁波高新分局',
+          '东钱湖分局',
+          '大榭开发区',
+          '镇海区',
+          '宁波杭州湾分局',
+          '象山县',
+          '宁海县',
+          '余姚市',
+          '鄞州区',
+          '慈溪市',
+          '奉化市',
+          '宁波契税征收管理中心',
+          '丽水市局本级',
+          '龙泉市局',
+          '青田县局',
+          '云和县局',
+          '庆元县局',
+          '缙云县局',
+          '遂昌县局',
+          '松阳县局',
+          '景宁县局',
+          '义乌',
+          '温州市局本级',
+          '洞头区局',
+          '乐清市局',
+          '永嘉县局',
+          '平阳县局',
+          '苍南县局',
+          '文成县局',
+          '泰顺县局',
+          '瑞安市局',
+          '湖州市局本级',
+          '德清县局',
+          '长兴县局',
+          '安吉县局',
+          '金华市局本级',
+          '永康市局',
+          '武义县局',
+          '义乌市局',
+          '浦江县局',
+          '磐安县局',
+          '兰溪市局',
+          '东阳市局',
+          '舟山市局本级',
+          '定海区局',
+          '普陀区局',
+          '岱山县局',
+          '嵊泗县局',
+          '台州市局本级',
+          '椒江区局',
+          '路桥区局',
+          '黄岩区局',
+          '临海市局',
+          '温岭市局',
+          '仙居县局',
+          '天台县局',
+          '三门县局',
+          '玉环县局',
+          '衢州市局本级',
+          '常山县局',
+          '江山市局',
+          '开化县局',
+          '龙游县局',
+          '绍兴市局本级',
+          '柯桥区局',
+          '新昌县局',
+          '诸暨市局',
+          '上虞区局',
+          '嵊州市局'
+        ];
         require('echarts/util/mapData/params').params.zj= {
           getGeoJson: function (callback) {
             $.getJSON('zhejiang.json', function (data) {
@@ -763,32 +863,38 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
             var aadata=[];//保存处理完成的结果集
             var str=',{data:[';//保存线性数据
             var strpont=',{data:[';//保存点状数据
-            var number=Math.floor(Math.random()*2+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
-            for(i=0, k={},l={};i<number;i++){
+            var number=Math.floor(Math.random()*3+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
+            for(i=0;i<number;i++){
               // var ronndnum=Math.floor(Math.random()*arrayObj.length);
+              // if(!geoCoordflr[$scope.ssData[i].swjmc]) {
+              //   alert($scope.ssData[i].swjmc);
+              //   console.log($scope.ssData[i]);
+              // }
               mydata=[{'name':$scope.ssData[i].swjmc},{'name':'省局直属局'}];
-              // console.log($scope.ssData[i].swjmc);
+              // console.log($scope.ssData[i]);
               aadata.push(mydata);
             }  //将数据压入aadata
             for(i=0;i<aadata.length;i++){
               str+='[{"name":"'+aadata[i][0].name+'"},{"name":"省局直属局"}],';
-              //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
               strpont+='{name:"'+aadata[i][0].name+'"},';
             }
             $scope.ssData = $scope.ssData.slice(number);
             // console.log($scope.ssData.length);
-            // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});方法
             str=str.substring(0,(str.length-1))+']})';
-            strpont=strpont.substring(0,(strpont.length-1))+']})'
+            strpont=strpont.substring(0,(strpont.length-1))+']})';
+            var obj;
             eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
             var t = setTimeout(function(){
-                  eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
+
+                  eval('obj = myChart.addMarkLine('+1+str);
+                  console.log(obj);
+//为index为1的系列添加线
                   clearTimeout(t);
                 }
                 ,1000);
             var r = setTimeout(function(){//回收canvas上的所有线跟点。
               for(i=0;i<aadata.length;i++){
-                eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州市局本级")');
+                eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 省局直属局")');
                 eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
               }
               clearTimeout(r);
