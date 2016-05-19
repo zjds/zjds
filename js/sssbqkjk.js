@@ -443,13 +443,17 @@ app.controller("sssbqkjkCtrl",['$scope','mainService',function($scope,mainServic
                 ]
             };
             myChart.setOption(option);
+
             $scope.ssDate = '';
+            $scope.companyData = [];
+
             mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbdt')
                 .then(function (data) {
                     console.log(data,'当天');
                     // console.log(data.root.value[0].sbbs);
                     $scope.sbbs = data.root.value[0].sbbs;
                     $scope.sbje = parseFloat(data.root.value[0].sbje/10000);
+                    $scope.sbjexs = $scope.sbje.toFixed(2);
                 });
             mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?sssbtjsj=')
                 .then(
@@ -473,43 +477,59 @@ app.controller("sssbqkjkCtrl",['$scope','mainService',function($scope,mainServic
                         );
                 },300000);
             $scope.timeTicket = setInterval(function (){
-                $scope.addsbje = "";
-                $scope.addsbbs = "";
-                var youdata=[];
+                $scope.addsbje = '';
+                $scope.addsbbs = '';
                 var mydata=[];
                 var aadata=[];//保存处理完成的结果集
                 var str=',{data:[';//保存线性数据
                 var strpont=',{data:[';//保存点状数据
                 var number=Math.floor(Math.random()*3+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
-                for(i=0, k={},l={};i<number;i++){
-                    // var ronndnum=Math.floor(Math.random()*arrayObj.length);
-                    mydata=[{'name':$scope.ssData[i].swjmc},{'name':'省局直属局'}];
-                    // console.log($scope.ssData[i].swjmc);
-                    aadata.push(mydata);
-                    console.log($scope.ssData[i].swjmc);
+                for(var i=0;i<number;i++){
+
+                    //显示10个数据
+                    if($scope.companyData.length>9){
+                        $scope.companyData.splice(0,0,$scope.ssData[i]);
+                        $scope.companyData.pop();
+                    }else {
+                        $scope.companyData.push($scope.ssData[i]);
+                    }
+
+                    //计算申报金额及申报笔数
                     $scope.addsbje=parseFloat($scope.addsbje+$scope.ssData[i].sbje/10000);
                     $scope.addsbbs = parseFloat($scope.addsbbs+$scope.ssData[i].sbbs);
-                }  //将数据压入aadata
+
+                    mydata=[{'name':$scope.ssData[i].swjmc},{'name':'省局直属局'}];
+                    aadata.push(mydata);
+                }
+
+                //将数据压入aadata
                 for(i=0;i<aadata.length;i++){
                     str+='[{"name":"'+aadata[i][0].name+'"},{"name":"省局直属局"}],';
                     //myChart.addMarkPoint(1,{data:[{name: '宁波'}]});
                     strpont+='{name:"'+aadata[i][0].name+'"},';
                 }
+
+                //过滤用过的数据
                 $scope.ssData = $scope.ssData.slice(number);
-                // console.log($scope.ssData.length);
-                // myChart.addMarkPoint(1,{data:[{name: '宁波'},{name: '杭州'}]});方法
+
+                //过滤最后一个数据后面的逗号
                 str=str.substring(0,(str.length-1))+']})';
-                strpont=strpont.substring(0,(strpont.length-1))+']})'
-                eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
+                strpont=strpont.substring(0,(strpont.length-1))+']})';
+
+                //为index为1的系列添加点
+                eval('myChart.addMarkPoint('+1+strpont);
+
+                //为index为1的系列添加线
                 var t = setTimeout(function(){
-                        eval('myChart.addMarkLine('+1+str); //为index为1的系列添加线
-                        $scope.sbje = parseFloat($scope.sbje+$scope.addsbje);
-                        // $scope.sbje = $scope.sbje.toFixed(2)
-                        $scope.sbbs = parseFloat($scope.sbbs+$scope.addsbbs);
-                        clearTimeout(t);
-                    }
-                    ,1000);
-                var r = setTimeout(function(){//回收canvas上的所有线跟点。
+                    eval('myChart.addMarkLine('+1+str);
+                    $scope.sbje = parseFloat($scope.sbje+$scope.addsbje);
+                    $scope.sbjexs = $scope.sbje.toFixed(2);
+                    $scope.sbbs = parseFloat($scope.sbbs+$scope.addsbbs);
+                    clearTimeout(t);
+                },1000);
+
+                //回收canvas上的所有线跟点
+                var r = setTimeout(function(){
                     for(i=0;i<aadata.length;i++){
                         eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州市局本级")');
                         eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');

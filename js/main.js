@@ -836,7 +836,10 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
           ]
         };
         myChart.setOption(option);
-        $scope.ssDate = '';
+
+        $scope.ssDate = ''; //保存实时申报数据
+
+        //实时申报取数,第一次
         mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?sssbtjsj=')
             .then(
                 function (data) {
@@ -846,6 +849,8 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
                   $scope.ssDate = data.root.sssbtjsj;
                 }
             );
+
+        //实时申报取数,300秒一次
         $scope.sssb = setInterval(
             function () {
               mainService.query('http://144.16.55.49:8088/gt3/dtzs/sssbss?',$scope.ssDate)
@@ -863,38 +868,38 @@ app.controller("swdxCtrl",['$scope','mainService',function($scope,mainService){
             var aadata=[];//保存处理完成的结果集
             var str=',{data:[';//保存线性数据
             var strpont=',{data:[';//保存点状数据
-            var number=Math.floor(Math.random()*3+1);//处理结果的数量，仅demo，实际可删 //产生的数据数量
+            var number=Math.floor(Math.random()*3+1); //产生的数据数量
             for(i=0;i<number;i++){
-              // var ronndnum=Math.floor(Math.random()*arrayObj.length);
-              // if(!geoCoordflr[$scope.ssData[i].swjmc]) {
-              //   alert($scope.ssData[i].swjmc);
-              //   console.log($scope.ssData[i]);
-              // }
               mydata=[{'name':$scope.ssData[i].swjmc},{'name':'省局直属局'}];
-              // console.log($scope.ssData[i]);
               aadata.push(mydata);
-            }  //将数据压入aadata
+            }
+
+            //将数据压入aadata
             for(i=0;i<aadata.length;i++){
               str+='[{"name":"'+aadata[i][0].name+'"},{"name":"省局直属局"}],';
               strpont+='{name:"'+aadata[i][0].name+'"},';
             }
+
+            //过滤用过的数据
             $scope.ssData = $scope.ssData.slice(number);
-            // console.log($scope.ssData.length);
+
+            //过滤最后一个数据后面的逗号
             str=str.substring(0,(str.length-1))+']})';
             strpont=strpont.substring(0,(strpont.length-1))+']})';
-            var obj;
-            eval('myChart.addMarkPoint('+1+strpont);  //为index为1的系列添加点
-            var t = setTimeout(function(){
 
-                  eval('obj = myChart.addMarkLine('+1+str);
-                  console.log(obj);
-//为index为1的系列添加线
-                  clearTimeout(t);
-                }
-                ,1000);
-            var r = setTimeout(function(){//回收canvas上的所有线跟点。
+            //为index为1的系列添加点
+            eval('myChart.addMarkPoint('+1+strpont);
+
+            //为index为1的系列添加线
+            var t = setTimeout(function(){
+              eval('myChart.addMarkLine('+1+str);
+              clearTimeout(t);
+            },1000);
+
+            //回收canvas上的所有线跟点
+            var r = setTimeout(function(){
               for(i=0;i<aadata.length;i++){
-                eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 省局直属局")');
+                eval('myChart.delMarkLine('+1+',"'+aadata[i][0].name+' > 杭州市局本级")');
                 eval('myChart.delMarkPoint('+1+',"'+aadata[i][0].name+'")');
               }
               clearTimeout(r);
